@@ -13,6 +13,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js"integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
       <title>RainChk</title>
     </head>
 
@@ -56,9 +57,25 @@
                         <div class="column is-mobile">
                             <div class="tabs">
                                 <ul>
-                                    <li class="is-active"><a>ToDos</a></li>
+                                    <li ><a>ToDos</a></li>
                                     <li><a>Weather</a></li>
-                                    <li><a>I'm Bored!</a></li>
+                                    <li id="imbored-modal"><a >I'm Bored!</a></li>
+                                    <div class="modal">
+                                        <div class="modal-background"></div>
+                                        <div class="modal-card">
+                                            <header class="modal-card-head">
+                                                <p class="modal-card-title">I'm Bored! Give me something to do.</p>
+                                                <button class="delete" id="modal-close" aria-label="close"></button>
+                                            </header>
+                                            <section class="modal-card-body">
+                                                <p>""</p>
+                                            </section>
+                                            <footer class="modal-card-foot">
+                                                <!-- <button class="button is-success">Save changes</button> -->
+                                                <button class="button modal-close">Cancel</button>
+                                            </footer>
+                                        </div>
+                                    </div>
                                     <!-- <li><a>Catagories</a></li> -->
                                 </ul>
                             </div>
