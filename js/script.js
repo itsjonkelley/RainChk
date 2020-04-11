@@ -38,27 +38,18 @@ function imBored() {
             
     
 
- //Model to work from to create modal
-/* <div class="modal">
-  <div class="modal-background"></div>
-  <div class="modal-card">
-    <header class="modal-card-head">
-      <p class="modal-card-title">Modal title</p>
-      <button class="delete" aria-label="close"></button>
-    </header>
-    <section class="modal-card-body">
-      <!-- Content ... -->
-    </section>
-    <footer class="modal-card-foot">
-      <button class="button is-success">Save changes</button>
-      <button class="button">Cancel</button>
-    </footer>
-  </div>
-</div> */
 
-
-
- // $( document ).ready(function() {
-//     console.log( "ready!" );
  });
 
+
+function displayDates () {
+    (showDate.innerHTML=date)
+};
+
+for( let i = 0; i < 5; i++ ) {
+    var date = moment().add(i,'days').format('MMMM Do'); 
+    var showDate = document.querySelector(".day"+i);
+    showDate.innerHTML=date;
+    displayDates(showDate);
+    console.log(i);
+    };
