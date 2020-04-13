@@ -20,7 +20,7 @@
     </head>
 
 <body>
-    <!-- <section class="section"> -->
+    <!-- added img to hero and also logo -->
     <section class="hero">
             <div class="hero-body ">
                 <div class="container">
@@ -51,39 +51,42 @@
                     </div>
                 </div>
         </section>
-    
-    </section>
-    <div class="tile is-parent">
-        <article class="tile is-child notification">
-            <div class="container">
-                <div class="columns is-mobile">
-                    <div class="column is-mobile">
-                        <div class="tabs">
-                            <ul>
-                                <li ><a>ToDos</a></li>
-                                <li><a>Weather</a></li>
-                                <li id="imbored-modal"><a >I'm Bored!</a></li>
-                                <div class="modal">
-                                    <div class="modal-background"></div>
-                                    <div class="modal-card">
-                                        <header class="modal-card-head">
-                                            <p class="modal-card-title">I'm Bored! Give me something to do.</p>
-                                            <button class="delete" id="modal-close" aria-label="close"></button>
-                                        </header>
-                                        <section class="modal-card-body">
-                                            <p>""</p>
-                                        </section>
-                                        <footer class="modal-card-foot">
-                                            <button class="button is-success" id="save-imbored">Save changes</button>
-                                            <button class="button is-primary" id="next-imbored">Next</button>
-                                            <button class="button" id="cancel-btn">Cancel</button>
-                                        </footer>
-                                    </div>
+        <!-- remove background to show white -->
+        <div class="container">
+            <div class="columns is-mobile">
+                <div class="column is-mobile">
+                    <div class="tabs">
+                        <ul>
+                            <!-- only change part above -->
+                            <li ><a>ToDos</a></li>
+                            <li><a>Weather</a></li>
+                            <li id="imbored-modal"><a >I'm Bored!</a></li>
+                            <div class="modal">
+                                <div class="modal-background"></div>
+                                <div class="modal-card">
+                                    <header class="modal-card-head">
+                                        <p class="modal-card-title">I'm Bored! Give me something to do.</p>
+                                        <button class="delete" id="modal-close" aria-label="close"></button>
+                                    </header>
+                                    <section class="modal-card-body">
+                                        <p>""</p>
+                                    </section>
+                                    <footer class="modal-card-foot">
+                                        <button class="button is-success" id="save-imbored">Save changes</button>
+                                        <button class="button is-primary" id="next-imbored">Next</button>
+                                        <button class="button" id="cancel-btn">Cancel</button>
+                                    </footer>
                                 </div>
-                                <!-- <li><a>Catagories</a></li> -->
-                            </ul>
+                            </div>
+                            <!-- <li><a>Catagories</a></li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+                </article>       
+            </div>
     </section>    
-    <section>
+    <!-- added TDL to and dropdown boxes  -->
         <div class="container">
             <div class="columns">
                 <div class="column is-two-thirds">
@@ -124,7 +127,9 @@
     
     </section>
     
+
     <section>
+        <div class="container">
             <div class="columns is-mobile">
                 <h5 class="title is-5"><span>Following 5 Days:</span></h5>
             </div>
@@ -272,6 +277,7 @@
                     </div>
                 </div>
             </div>
+            <!-- changed bottom part to see card eventually changing everything to cards -->
             <div class="columns is-mobile">
                 <div class="column is-mobile is-one-fifth">
                     <div class="card">
@@ -296,7 +302,8 @@
                           <a href="#" class="card-footer-item">Delete</a>
                         </footer>
                       </div>
-            </div>
+        </div>
+                    </div>
         </article>    
         </div>
     </section>
