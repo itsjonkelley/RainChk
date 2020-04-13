@@ -53,38 +53,35 @@
         </section>
     
     </section>
-        <div class="container">
-            <div class="columns is-mobile">
-                <div class="column is-mobile">
-                    <div class="tabs">
-                        <ul>
-                            <li ><a>ToDos</a></li>
-                            <li><a>Weather</a></li>
-                            <li id="imbored-modal"><a >I'm Bored!</a></li>
-                            <div class="modal">
-                                <div class="modal-background"></div>
-                                <div class="modal-card">
-                                    <header class="modal-card-head">
-                                        <p class="modal-card-title">I'm Bored! Give me something to do.</p>
-                                        <button class="delete" id="modal-close" aria-label="close"></button>
-                                    </header>
-                                    <section class="modal-card-body">
-                                        <p>""</p>
-                                    </section>
-                                    <footer class="modal-card-foot">
-                                        <button class="button is-success" id="save-imbored">Save changes</button>
-                                        <button class="button is-primary" id="next-imbored">Next</button>
-                                        <button class="button" id="cancel-btn">Cancel</button>
-                                    </footer>
+    <div class="tile is-parent">
+        <article class="tile is-child notification">
+            <div class="container">
+                <div class="columns is-mobile">
+                    <div class="column is-mobile">
+                        <div class="tabs">
+                            <ul>
+                                <li ><a>ToDos</a></li>
+                                <li><a>Weather</a></li>
+                                <li id="imbored-modal"><a >I'm Bored!</a></li>
+                                <div class="modal">
+                                    <div class="modal-background"></div>
+                                    <div class="modal-card">
+                                        <header class="modal-card-head">
+                                            <p class="modal-card-title">I'm Bored! Give me something to do.</p>
+                                            <button class="delete" id="modal-close" aria-label="close"></button>
+                                        </header>
+                                        <section class="modal-card-body">
+                                            <p>""</p>
+                                        </section>
+                                        <footer class="modal-card-foot">
+                                            <button class="button is-success" id="save-imbored">Save changes</button>
+                                            <button class="button is-primary" id="next-imbored">Next</button>
+                                            <button class="button" id="cancel-btn">Cancel</button>
+                                        </footer>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- <li><a>Catagories</a></li> -->
-                        </ul>
-                    </div>
-                </div>
-            </div>
-                </article>       
-            </div>
+                                <!-- <li><a>Catagories</a></li> -->
+                            </ul>
     </section>    
     <section>
         <div class="container">
@@ -96,7 +93,7 @@
                             <input class="input is-info" type="text" placeholder="Activity">
                         </p>
                         <p class="control">
-                            <span class="select is-info">
+                            <p class="select is-info">
                                 <select>
                                     <option>Weather</option>
                                     <option>Sunny</option>
@@ -106,7 +103,7 @@
                                     <option>Hot</option>
                                     <option>Cold</option>
                                 </select>
-                            </span>
+                            </p>
                             <span class="select is-info">
                                 <select>
                                     <option>Day</option>
