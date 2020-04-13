@@ -3,9 +3,10 @@ console.log("found js file!!");
 var imBoredObj;
 //var url = https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&appid={YOUR API KEY}
 const openWeatherapi = {
-    key: "ab222fde8a40e718d2b8f92721309596", 
-    base: "https://api.openweathermap.org/data/2.5/"
-}
+    key: "appid=ab222fde8a40e718d2b8f92721309596", 
+    base: "https://api.openweathermap.org/data/2.5/",
+    units: "&units=imperial&",
+};
 //Example BoredAPI URL: "http://www.boredapi.com/api/activity?minaccessibility=0&maxaccessibility=0.1"
  const imBoredapi = {
      base: "http://www.boredapi.com/api/activity",
