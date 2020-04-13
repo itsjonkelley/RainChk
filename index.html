@@ -53,81 +53,78 @@
         </section>
     
     </section>
-    <div class="container">
-        <div class="columns is-mobile">
-            <div class="column is-mobile">
-                <div class="tabs">
-                    <ul>
-                        <li ><a>ToDos</a></li>
-                        <li><a>Weather</a></li>
-                        <li id="imbored-modal"><a >I'm Bored!</a></li>
-                        <div class="modal">
-                            <div class="modal-background"></div>
-                            <div class="modal-card">
-                                <header class="modal-card-head">
-                                    <p class="modal-card-title">I'm Bored! Give me something to do.</p>
-                                    <button class="delete" id="modal-close" aria-label="close"></button>
-                                </header>
-                                <section class="modal-card-body">
-                                    <p>""</p>
-                                </section>
-                                <footer class="modal-card-foot">
-                                    <button class="button is-success" id="save-imbored">Save changes</button>
-                                    <button class="button is-primary" id="next-imbored">Next</button>
-                                    <button class="button" id="cancel-btn">Cancel</button>
-                                </footer>
+        <div class="container">
+            <div class="columns is-mobile">
+                <div class="column is-mobile">
+                    <div class="tabs">
+                        <ul>
+                            <li ><a>ToDos</a></li>
+                            <li><a>Weather</a></li>
+                            <li id="imbored-modal"><a >I'm Bored!</a></li>
+                            <div class="modal">
+                                <div class="modal-background"></div>
+                                <div class="modal-card">
+                                    <header class="modal-card-head">
+                                        <p class="modal-card-title">I'm Bored! Give me something to do.</p>
+                                        <button class="delete" id="modal-close" aria-label="close"></button>
+                                    </header>
+                                    <section class="modal-card-body">
+                                        <p>""</p>
+                                    </section>
+                                    <footer class="modal-card-foot">
+                                        <button class="button is-success" id="save-imbored">Save changes</button>
+                                        <button class="button is-primary" id="next-imbored">Next</button>
+                                        <button class="button" id="cancel-btn">Cancel</button>
+                                    </footer>
+                                </div>
                             </div>
-                        </div>
-                        <!-- <li><a>Catagories</a></li> -->
-                    </ul>
+                            <!-- <li><a>Catagories</a></li> -->
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-            </article>       
-        </div>
+                </article>       
+            </div>
     </section>    
     <section>
         <div class="container">
             <div class="columns">
                 <div class="column is-two-thirds">
                     <h1 class="title">To Do List</h1>
-                    <div class="control">
-                        <input class="input is-focused" type="text" placeholder="Activiy">
-                    </div>
-                </div>
-                <div class="column">
-                    <h1 class="title is-3">Weather</h1>
-                    <div class="select">
-                    <select class="is-focused">
-                        <option>Select dropdown</option>
-                        <option>Sunny</option>
-                        <option>Raining</option>
-                        <option>Outdoor</option>
-                        <option>Indoor</option>
-                        <option>Hot</option>
-                        <option>Cold</option>
-                    </select>
-                </div>
-                <div class="column">
-                    <h1 class="title is-3">Day</h1>
-                        <div class="field is-horizontal">
-                    <div class="select">
-                    <select class="is-focused">
-                        <option>Select dropdown</option>
-                        <option>Day1</option>
-                        <option>Day2</option>
-                        <option>Day3</option>
-                        <option>Day4</option>
-                        <option>Day5</option>
-                    </select>
-                </div>    
-                <!-- <div class="column is-offset-6"> -->
-                    <button type="submit" class="button is-info">Choose</button>
-                </div>
-                </div>
+                    <div class="field has-addons">
+                        <p class="control is-expanded ">
+                            <input class="input is-info" type="text" placeholder="Activity">
+                        </p>
+                        <p class="control">
+                            <span class="select is-info">
+                                <select>
+                                    <option>Weather</option>
+                                    <option>Sunny</option>
+                                    <option>Raining</option>
+                                    <option>Outdoor</option>
+                                    <option>Indoor</option>
+                                    <option>Hot</option>
+                                    <option>Cold</option>
+                                </select>
+                            </span>
+                            <span class="select is-info">
+                                <select>
+                                    <option>Day</option>
+                                    <option>Day1</option>
+                                    <option>Day2</option>
+                                    <option>Day3</option>
+                                    <option>Day4</option>
+                                    <option>Day5</option>
+                                </select>
+                            </span>
+                        </p>
+                        <p class="control">
+                            <a class="button is-info">
+                                choose
+                            </a>
+                        </p>
             </div>
-        </div> 
-
+    
     </section>
     
     <section>
