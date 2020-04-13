@@ -1,0 +1,12 @@
+.hero-body {
+     background-image: url(../RainChk/assets/Rck\ background\ effect\ sample\ 780\ x\ 60.png);
+     background-size: cover;
+    }
+
+.navbar-item {
+    font-size: medium;
+    font-weight: bold;
+}
+.content {
+    font-size: x-large; 
+}

@@ -14,41 +14,42 @@
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="style.css">
+    
       <title>RainChk</title>
     </head>
 
 <body>
-    <section class="section">
-        <section class="hero is-info">
-            <div class="hero-body">
+    <!-- <section class="section"> -->
+    <section class="hero">
+            <div class="hero-body ">
                 <div class="container">
                     <div class="columns">
                         <div class="column">
-                            <h1 class="title">
-                                <figure class="image is-48x48">
-                                    <img class="is-rounded" src="./assets/RainChkLogo.png" alt="" style="height: 50px;"> 
-                                </figure>
-                                RainChk
-                            </h1>
+                            <figure class="image is-48x48">
+                                <img class="is-squared" src="./assets/RainChk 2 transp.png" alt="" style="height: 60px;">
+                            </figure>
+                            <br>
+                            <h1 class="title">RainChk</h1>
+    
                             <h2 class="subtitle">
                                 Welcome to your <strong>FreeTime Maker!</strong>
                             </h2>
                         </div>
-                        <div class="column">  
+                        <div class="column">
                             <div class="media-content">
                                 <div class="content">
                                     <p>
                                         <strong>Current Weather is: </strong> <i class="fas fa-sun"></i>
                                     </p>
-                                    <p>    
-                                        <strong>Current Temp: </strong><span>76 </span> degrees 
+                                    <p>
+                                        <strong>Current Temp: </strong><span> </span>
                                     </p>
                                 </div>
                             </div>
-                        </div>    
-                    </div>    
+                        </div>
+                    </div>
                 </div>
-            </div>
         </section>
         <div class="tile is-parent">
             <article class="tile is-child notification">
@@ -80,256 +81,234 @@
                                     <!-- <li><a>Catagories</a></li> -->
                                 </ul>
                             </div>
-                        </div>
-                        
-
+                            <!-- <li><a>Catagories</a></li> -->
+                        </ul>
                     </div>
-                    <div class="columns is-mobile">
-                        <div class="column is-mobile">
-                            <div class="content">
-                                <h5 class="title is-5">To Do List</h5>
-                                <ol type="1" id="todo">
-                                    <li><input class="input is-small" type="text" placeholder="Mow the Lawn"></li>
-                                    <li><input class="input is-small" type="text" placeholder="Wash the exterior windows"></li>
-                                    <li><input class="input is-small" type="text" placeholder="Go to the grocery store"></li>
-                                    <li><input class="input is-small" type="text" placeholder="Dynamically build a new one when last one is used"></li>
-                                </ol>
-                                <hr>
-                            </div>
-                        </div>
-                        <div class="column is-mobile">
-                            <div class="content">
-                                <h5 class="title is-5">Weather</h5>    
-                            </div>
-                            <ul>
-                                <li><div class="select is-small" required>
-                                    <select>
-                                    <option></option>
-                                    <option>Sunny</option>   
+                </div>
+            </div>
+                </article>       
+            </div>
+    </section>    
+    <section>
+        <div class="container">
+            <div class="columns">
+                <div class="column is-two-thirds">
+                    <h1 class="title">To Do List</h1>
+                    <div class="field has-addons">
+                        <p class="control is-expanded ">
+                            <input class="input is-info" type="text" placeholder="Activity">
+                        </p>
+                        <p class="control">
+                            <span class="select is-info">
+                                <select>
+                                    <option>Weather</option>
+                                    <option>Sunny</option>
                                     <option>Raining</option>
                                     <option>Outdoor</option>
                                     <option>Indoor</option>
                                     <option>Hot</option>
                                     <option>Cold</option>
-                                    </select>
-                                </div>
-                                </li>
-
-                                <li><div class="select is-small">
-                                        <select>
-                                        <option>Sunny</option>   
-                                        <option>Raining</option>
-                                        <option>Outdoor</option>
-                                        <option>Indoor</option>
-                                        <option>Hot</option>
-                                        <option>Cold</option>
-                                        </select>
-                                    </div>
-                                </li>
-
-                                <li><div class="select is-small">
-                                    <select>
-                                    <option>Sunny</option>   
-                                    <option>Raining</option>
-                                    <option>Outdoor</option>
-                                    <option>Indoor</option>
-                                    <option>Hot</option>
-                                    <option>Cold</option>
-                                    </select>
-                                    </div>
-                                </li> 
-                                <li><div class="select is-small">
-                                    <select>
-                                    <option>Sunny</option>   
-                                    <option>Raining</option>
-                                    <option>Outdoor</option>
-                                    <option>Indoor</option>
-                                    <option>Hot</option>
-                                    <option>Cold</option>
-                                    </select>
-                                    </div>
-                                </li>    
-                            </ul>  
+                                </select>
+                            </span>
+                            <span class="select is-info">
+                                <select>
+                                    <option>Day</option>
+                                    <option>Day1</option>
+                                    <option>Day2</option>
+                                    <option>Day3</option>
+                                    <option>Day4</option>
+                                    <option>Day5</option>
+                                </select>
+                            </span>
+                        </p>
+                        <p class="control">
+                            <a class="button is-info">
+                                choose
+                            </a>
+                        </p>
+            </div>
+    
+    </section>
+    
+    <section>
+            <div class="columns is-mobile">
+                <h5 class="title is-5"><span>Following 5 Days:</span></h5>
+            </div>
+            <div class="columns is-mobile">
+                <div class="column is-mobile is-one-fifth">
+                    <p class="bd-notification is-info day0"></p>
+                </div>
+                <div class="column is-mobile">
+                    <textarea class="textarea is-small is-info" placeholder="Enter To do items here..." rows="1"></textarea>
+                </div>
+                <div class="column is-mobile">
+                    <div class="field has-addons">
+                        <div class="control">
+                        <div class="select is-small">
+                            <select name="status">
+                            <option value="Completed">Completed</option>    
+                            <option value="Save">Save</option>
+                            <option value="Delete">Delete</option>
+                            </select>
                         </div>
-                    </div>    
-                    <div class="columns is-mobile">
-                        <h5 class="title is-5"><span>Following 5 Days:</span></h5>
-                    </div>
-                    <div class="columns is-mobile">
-                        <div class="column is-mobile is-one-fifth">
-                            <p class="bd-notification is-info day0"></p>
                         </div>
-                        <div class="column is-mobile">
-                            <textarea class="textarea is-small is-info" placeholder="Enter To do items here..." rows="1"></textarea>
-                        </div>
-                        <div class="column is-mobile">
-                            <div class="field has-addons">
-                                <div class="control">
-                                <div class="select is-small">
-                                    <select name="status">
-                                    <option value="Completed">Completed</option>    
-                                    <option value="Save">Save</option>
-                                    <option value="Delete">Delete</option>
-                                    </select>
-                                </div>
-                                </div>
-                                <div class="control">
-                                <button type="submit" class="button is-info is-small">Choose</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>    
-                    <div class="columns is-mobile">
-                        <div class="column is-mobile is-one-fifth">
-                            <p class="bd-notification is-info day1"></p>
-                        </div>
-                        <div class="column is-mobile">
-                            <textarea class="textarea is-small is-info" placeholder="Enter To do items here..." rows="1"></textarea>
-                        </div>
-                        <div class="column is-mobile">
-                            <div class="field has-addons">
-                                <div class="control">
-                                <div class="select is-small">
-                                    <select name="status">
-                                    <option value="Completed">Completed</option>    
-                                    <option value="Save">Save</option>
-                                    <option value="Delete">Delete</option>
-                                    </select>
-                                </div>
-                                </div>
-                                <div class="control">
-                                <button type="submit" class="button is-info is-small">Choose</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="columns is-mobile">
-                        <div class="column is-mobile is-one-fifth">
-                            <p class="bd-notification is-info day2"></p>
-                        </div>
-                        <div class="column is-mobile">
-                            <textarea class="textarea is-small is-info" placeholder="Enter To do items here..." rows="1"></textarea>
-                        </div>
-                        <div class="column is-mobile">
-                            <div class="field has-addons">
-                                <div class="control">
-                                <div class="select is-small">
-                                    <select name="status">
-                                    <option value="Completed">Completed</option>    
-                                    <option value="Save">Save</option>
-                                    <option value="Delete">Delete</option>
-                                    </select>
-                                </div>
-                                </div>
-                                <div class="control">
-                                <button type="submit" class="button is-info is-small">Choose</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="columns is-mobile">
-                        <div class="column is-mobile is-one-fifth">
-                            <p class="bd-notification is-info day3"></p>
-                        </div>
-                        <div class="column is-mobile">
-                            <textarea class="textarea is-small is-info" placeholder="Enter To do items here..." rows="1"></textarea>
-                        </div>
-                        <div class="column is-mobile">
-                            <div class="field has-addons">
-                                <div class="control">
-                                <div class="select is-small">
-                                    <select name="status">
-                                    <option value="Completed">Completed</option>    
-                                    <option value="Save">Save</option>
-                                    <option value="Delete">Delete</option>
-                                    </select>
-                                </div>
-                                </div>
-                                <div class="control">
-                                <button type="submit" class="button is-info is-small">Choose</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="columns is-mobile">
-                        <div class="column is-mobile is-one-fifth">
-                            <p class="bd-notification is-info day4"></p>
-                        </div>
-                        <div class="column is-mobile">
-                            <textarea class="textarea is-small is-info" placeholder="Enter To do items here..." rows="1"></textarea>
-                        </div>
-                        <div class="column is-mobile">
-                            <div class="field has-addons">
-                                <div class="control">
-                                <div class="select is-small">
-                                    <select name="status">
-                                    <option value="Completed">Completed</option>    
-                                    <option value="Save">Save</option>
-                                    <option value="Delete">Delete</option>
-                                    </select>
-                                </div>
-                                </div>
-                                <div class="control">
-                                <button type="submit" class="button is-info is-small">Choose</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="columns is-mobile">
-                        <div class="column is-mobile is-one-fifth">
-                            <p class="bd-notification is-info">Saturday</p>
-                        </div>
-                        <div class="column is-mobile">
-                            <textarea class="textarea is-small is-info" placeholder="Enter To do items here..." rows="1"></textarea>
-                        </div>
-                        <div class="column is-mobile">
-                            <div class="field has-addons">
-                                <div class="control">
-                                <div class="select is-small">
-                                    <select name="status">
-                                    <option value="Completed">Completed</option>    
-                                    <option value="Save">Save</option>
-                                    <option value="Delete">Delete</option>
-                                    </select>
-                                </div>
-                                </div>
-                                <div class="control">
-                                <button type="submit" class="button is-info is-small">Choose</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="columns is-mobile">
-                        <div class="column is-mobile is-one-fifth">
-                            <p class="bd-notification is-info">Sunday</p>
-                        </div>
-                        <div class="column is-mobile">
-                            <textarea class="textarea is-small is-info" placeholder="Enter To do items here..." rows="1"></textarea>
-                        </div>
-                        <div class="column is-mobile">
-                            <div class="field has-addons">
-                                <div class="control">
-                                <div class="select is-small">
-                                    <select name="status">
-                                    <option value="Completed">Completed</option>    
-                                    <option value="Save">Save</option>
-                                    <option value="Delete">Delete</option>
-                                    </select>
-                                </div>
-                                </div>
-                                <div class="control">
-                                <button type="submit" class="button is-info is-small">Choose</button>
-                                </div>
-                            </div>
+                        <div class="control">
+                        <button type="submit" class="button is-info is-small">Choose</button>
                         </div>
                     </div>
                 </div>
-            </article>    
+            </div>    
+            <div class="columns is-mobile">
+                <div class="column is-mobile is-one-fifth">
+                    <p class="bd-notification is-info day1"></p>
+                </div>
+                <div class="column is-mobile">
+                    <textarea class="textarea is-small is-info" placeholder="Enter To do items here..." rows="1"></textarea>
+                </div>
+                <div class="column is-mobile">
+                    <div class="field has-addons">
+                        <div class="control">
+                        <div class="select is-small">
+                            <select name="status">
+                            <option value="Completed">Completed</option>    
+                            <option value="Save">Save</option>
+                            <option value="Delete">Delete</option>
+                            </select>
+                        </div>
+                        </div>
+                        <div class="control">
+                        <button type="submit" class="button is-info is-small">Choose</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="columns is-mobile">
+                <div class="column is-mobile is-one-fifth">
+                    <p class="bd-notification is-info day2"></p>
+                </div>
+                <div class="column is-mobile">
+                    <textarea class="textarea is-small is-info" placeholder="Enter To do items here..." rows="1"></textarea>
+                </div>
+                <div class="column is-mobile">
+                    <div class="field has-addons">
+                        <div class="control">
+                        <div class="select is-small">
+                            <select name="status">
+                            <option value="Completed">Completed</option>    
+                            <option value="Save">Save</option>
+                            <option value="Delete">Delete</option>
+                            </select>
+                        </div>
+                        </div>
+                        <div class="control">
+                        <button type="submit" class="button is-info is-small">Choose</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="columns is-mobile">
+                <div class="column is-mobile is-one-fifth">
+                    <p class="bd-notification is-info day3"></p>
+                </div>
+                <div class="column is-mobile">
+                    <textarea class="textarea is-small is-info" placeholder="Enter To do items here..." rows="1"></textarea>
+                </div>
+                <div class="column is-mobile">
+                    <div class="field has-addons">
+                        <div class="control">
+                        <div class="select is-small">
+                            <select name="status">
+                            <option value="Completed">Completed</option>    
+                            <option value="Save">Save</option>
+                            <option value="Delete">Delete</option>
+                            </select>
+                        </div>
+                        </div>
+                        <div class="control">
+                        <button type="submit" class="button is-info is-small">Choose</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="columns is-mobile">
+                <div class="column is-mobile is-one-fifth">
+                    <p class="bd-notification is-info day4"></p>
+                </div>
+                <div class="column is-mobile">
+                    <textarea class="textarea is-small is-info" placeholder="Enter To do items here..." rows="1"></textarea>
+                </div>
+                <div class="column is-mobile">
+                    <div class="field has-addons">
+                        <div class="control">
+                        <div class="select is-small">
+                            <select name="status">
+                            <option value="Completed">Completed</option>    
+                            <option value="Save">Save</option>
+                            <option value="Delete">Delete</option>
+                            </select>
+                        </div>
+                        </div>
+                        <div class="control">
+                        <button type="submit" class="button is-info is-small">Choose</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="columns is-mobile">
+                <div class="column is-mobile is-one-fifth">
+                    <p class="bd-notification is-info">Saturday</p>
+                </div>
+                <div class="column is-mobile">
+                    <textarea class="textarea is-small is-info" placeholder="Enter To do items here..." rows="1"></textarea>
+                </div>
+                <div class="column is-mobile">
+                    <div class="field has-addons">
+                        <div class="control">
+                        <div class="select is-small">
+                            <select name="status">
+                            <option value="Completed">Completed</option>    
+                            <option value="Save">Save</option>
+                            <option value="Delete">Delete</option>
+                            </select>
+                        </div>
+                        </div>
+                        <div class="control">
+                        <button type="submit" class="button is-info is-small">Choose</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="columns is-mobile">
+                <div class="column is-mobile is-one-fifth">
+                    <div class="card">
+                        <header class="card-header">
+                          <p class="card-header-title">
+                            Date
+                          </p>
+                            <span class="icon">
+                              <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                          </a>
+                        </header>
+                        <div class="card-content">
+                          <div class="content">
+                            Activities 
+                            <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
+                          </div>
+                        </div>
+                        <footer class="card-footer">
+                          <a href="#" class="card-footer-item">Completed</a>
+                          <!-- <a href="#" class="card-footer-item">Save</a> -->
+                          <a href="#" class="card-footer-item">Delete</a>
+                        </footer>
+                      </div>
+            </div>
+        </article>    
         </div>
     </section>
-    <!-- JavaScript -->
+<!-- JavaScript -->
 
-    <script src="./js/script.js"></script>
+<script src="./js/script.js"></script>
 </body>
 
 </html>
