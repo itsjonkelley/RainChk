@@ -1,6 +1,8 @@
 //Project 1 for Group 2 GT Full Stack Dev Flex 2020
 console.log("found js file!!");
-var imBoredObj;
+var imBoredObj; //global variable to pass between functions-DW
+//todoInput variable for textarea input
+var todoInput;
 //var url = https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&appid={YOUR API KEY}
 const openWeatherapi = {
     key: "ab222fde8a40e718d2b8f92721309596", 
@@ -39,6 +41,9 @@ function imBored() {
                     console.log("Save button clicked", response.type);
                     //saved I'mBored API response to "imBoredObj" to be passed to ToDo list
                     imBoredObj = response;
+                    todoInput = imBoredObj.activity;
+                    console.log("New variable todoInput", todoInput);
+                    $("#todoInput").val(imBoredObj.activity);
                     console.log("Activity: ", imBoredObj.activity);
                     $(".modal").removeClass("is-active");
                 });
