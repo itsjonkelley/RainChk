@@ -71,3 +71,24 @@ for( let i = 0; i < 5; i++ ) {
     displayDates(showDate);
     console.log(i);
     };
+
+
+    // Function to add task to input
+
+
+    $(document).ready(function () {
+        $('#taskInput').on("click", function () {
+          var city = $('taskInput').val();
+        
+          $('taskInput').val("");
+          cityWeather(city);
+          console.log(cityWeather)
+        });
+        //function append row based on what city was searched by user
+        $("#submit").on("click", function () {
+          var listedCity = $('<li>').text('<button>' + city + ' <button>');
+          $('.task').append(listedCity)
+        }
+        )
+      
+      });
