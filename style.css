@@ -14,3 +14,10 @@
     float: left;
     padding-right: 300px;
 }
+.card{
+    background-color: rgb(201, 237, 248);
+}
+.card-footer-item {
+    font: bolder;
+    color: rgb(236, 19, 92);
+}
