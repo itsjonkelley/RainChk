@@ -1,5 +1,5 @@
 .hero-body {
-     background-image: url(../RainChk/assets/Rck\ background\ effect\ sample\ 780\ x\ 60.png);
+     background-image: url(./assets/Rck\ background\ effect\ sample\ 780\ x\ 60.png);
      background-size: cover;
     }
 
@@ -9,4 +9,8 @@
 }
 .content {
     font-size: x-large; 
+}
+.topRightGroup {
+    float: left;
+    padding-right: 300px;
 }

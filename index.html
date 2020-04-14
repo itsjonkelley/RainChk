@@ -15,10 +15,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
       <link rel="stylesheet" href="style.css">
-    
       <title>RainChk</title>
     </head>
-
 <body>
     <!-- added img to hero and also logo -->
     <section class="hero">
@@ -27,23 +25,29 @@
                     <div class="columns">
                         <div class="column">
                             <figure class="image is-48x48">
-                                <img class="is-squared" src="./assets/RainChk 2 transp.png" alt="" style="height: 60px;">
+                                <img class="is-squared" src="./assets/RainChkb1.png" alt="" style="height: 60px;">
                             </figure>
                             <br>
                             <h1 class="title">RainChk</h1>
-    
                             <h2 class="subtitle">
                                 Welcome to your <strong>FreeTime Maker!</strong>
                             </h2>
                         </div>
                         <div class="column">
                             <div class="media-content">
-                                <div class="content">
+                                <div class="content topRightGroup">
                                     <p>
                                         <strong>Current Weather is: </strong> <i class="fas fa-sun"></i>
                                     </p>
                                     <p>
                                         <strong>Current Temp: </strong><span> </span>
+                                    </p>
+                                    <p>
+                                        <strong>Input Current City:</strong>
+                                        <div class="field has-addons">
+                                            <input class="input is-rounded" id="getCity" type="text" placeholder="Ex: Atlanta">
+                                            <button class="button is-info is-rounded" id="locationInputBtn">Search</button>
+                                        </div>
                                     </p>
                                 </div>
                             </div>
@@ -96,7 +100,7 @@
                             <input class="input is-info" id="todoInput" type="text" placeholder="Activity">
                         </p>
                         <p class="control">
-                            <p class="select is-info">
+                            <p class="select">
                                 <select>
                                     <option>Weather</option>
                                     <option>Sunny</option>
@@ -124,192 +128,126 @@
                             </a>
                         </p>
             </div>
-    
     </section>
-    
-
-    <section>
-        <div class="container">
-            <div class="columns is-mobile">
-                <h5 class="title is-5"><span>Following 5 Days:</span></h5>
+<!-- added section and cards -->
+<section>
+    <!-- <div class="field has-addons"> -->
+    <div class="container">
+        <div class="columns">
+            <div class="column is-mobile is-one-third">
+            <div class="card">
+                <header class="card-header">
+                <p class="card-header-title day0"></p>
+                    <span class="icon">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                </header>
+                <div class="card-content">
+                <div class="content">
+                 Activities 
+                <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
+                </div>
+                </div>
+                <footer class="card-footer">
+                <a href="#" class="card-footer-item">Completed</a>
+            <!-- <a href="#" class="card-footer-item">Save</a> -->
+                <a href="#" class="card-footer-item">Delete</a>
+                </footer>
             </div>
-            <div class="columns is-mobile">
-                <div class="column is-mobile is-one-fifth">
-                    <p class="bd-notification is-info day0"></p>
-                </div>
-                <div class="column is-mobile">
-                    <textarea class="textarea is-small is-info" placeholder="Enter To do items here..." rows="1"></textarea>
-                </div>
-                <div class="column is-mobile">
-                    <div class="field has-addons">
-                        <div class="control">
-                        <div class="select is-small">
-                            <select name="status">
-                            <option value="Completed">Completed</option>    
-                            <option value="Save">Save</option>
-                            <option value="Delete">Delete</option>
-                            </select>
-                        </div>
-                        </div>
-                        <div class="control">
-                        <button type="submit" class="button is-info is-small">Choose</button>
-                        </div>
-                    </div>
-                </div>
-            </div>    
-            <div class="columns is-mobile">
-                <div class="column is-mobile is-one-fifth">
-                    <p class="bd-notification is-info day1"></p>
-                </div>
-                <div class="column is-mobile">
-                    <textarea class="textarea is-small is-info" placeholder="Enter To do items here..." rows="1"></textarea>
-                </div>
-                <div class="column is-mobile">
-                    <div class="field has-addons">
-                        <div class="control">
-                        <div class="select is-small">
-                            <select name="status">
-                            <option value="Completed">Completed</option>    
-                            <option value="Save">Save</option>
-                            <option value="Delete">Delete</option>
-                            </select>
-                        </div>
-                        </div>
-                        <div class="control">
-                        <button type="submit" class="button is-info is-small">Choose</button>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <div class="columns is-mobile">
-                <div class="column is-mobile is-one-fifth">
-                    <p class="bd-notification is-info day2"></p>
+            <div class="column is-mobile is-one-third">
+            <div class="card">
+                <header class="card-header">
+                <p class="card-header-title day1"></p>
+                    <span class="icon">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                </header>
+                <div class="card-content">
+                <div class="content">
+                 Activities 
+                <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
                 </div>
-                <div class="column is-mobile">
-                    <textarea class="textarea is-small is-info" placeholder="Enter To do items here..." rows="1"></textarea>
                 </div>
-                <div class="column is-mobile">
-                    <div class="field has-addons">
-                        <div class="control">
-                        <div class="select is-small">
-                            <select name="status">
-                            <option value="Completed">Completed</option>    
-                            <option value="Save">Save</option>
-                            <option value="Delete">Delete</option>
-                            </select>
-                        </div>
-                        </div>
-                        <div class="control">
-                        <button type="submit" class="button is-info is-small">Choose</button>
-                        </div>
-                    </div>
-                </div>
+                <footer class="card-footer">
+                <a href="#" class="card-footer-item">Completed</a>
+            <!-- <a href="#" class="card-footer-item">Save</a> -->
+                <a href="#" class="card-footer-item">Delete</a>
+                </footer>
             </div>
-            <div class="columns is-mobile">
-                <div class="column is-mobile is-one-fifth">
-                    <p class="bd-notification is-info day3"></p>
-                </div>
-                <div class="column is-mobile">
-                    <textarea class="textarea is-small is-info" placeholder="Enter To do items here..." rows="1"></textarea>
-                </div>
-                <div class="column is-mobile">
-                    <div class="field has-addons">
-                        <div class="control">
-                        <div class="select is-small">
-                            <select name="status">
-                            <option value="Completed">Completed</option>    
-                            <option value="Save">Save</option>
-                            <option value="Delete">Delete</option>
-                            </select>
-                        </div>
-                        </div>
-                        <div class="control">
-                        <button type="submit" class="button is-info is-small">Choose</button>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <div class="columns is-mobile">
-                <div class="column is-mobile is-one-fifth">
-                    <p class="bd-notification is-info day4"></p>
+            <div class="column is-mobile is-one-third">
+            <div class="card">
+                <header class="card-header">
+                <p class="card-header-title day2"></p>
+                    <span class="icon">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                </header>
+                <div class="card-content">
+                <div class="content">
+                 Activities 
+                <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
                 </div>
-                <div class="column is-mobile">
-                    <textarea class="textarea is-small is-info" placeholder="Enter To do items here..." rows="1"></textarea>
                 </div>
-                <div class="column is-mobile">
-                    <div class="field has-addons">
-                        <div class="control">
-                        <div class="select is-small">
-                            <select name="status">
-                            <option value="Completed">Completed</option>    
-                            <option value="Save">Save</option>
-                            <option value="Delete">Delete</option>
-                            </select>
-                        </div>
-                        </div>
-                        <div class="control">
-                        <button type="submit" class="button is-info is-small">Choose</button>
-                        </div>
-                    </div>
-                </div>
+                <footer class="card-footer">
+                <a href="#" class="card-footer-item">Completed</a>
+            <!-- <a href="#" class="card-footer-item">Save</a> -->
+                <a href="#" class="card-footer-item">Delete</a>
+                </footer>
             </div>
-            <div class="columns is-mobile">
-                <div class="column is-mobile is-one-fifth">
-                    <p class="bd-notification is-info">Saturday</p>
-                </div>
-                <div class="column is-mobile">
-                    <textarea class="textarea is-small is-info" placeholder="Enter To do items here..." rows="1"></textarea>
-                </div>
-                <div class="column is-mobile">
-                    <div class="field has-addons">
-                        <div class="control">
-                        <div class="select is-small">
-                            <select name="status">
-                            <option value="Completed">Completed</option>    
-                            <option value="Save">Save</option>
-                            <option value="Delete">Delete</option>
-                            </select>
-                        </div>
-                        </div>
-                        <div class="control">
-                        <button type="submit" class="button is-info is-small">Choose</button>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <!-- changed bottom part to see card eventually changing everything to cards -->
-            <div class="columns is-mobile">
-                <div class="column is-mobile is-one-fifth">
-                    <div class="card">
-                        <header class="card-header">
-                          <p class="card-header-title">
-                            Date
-                          </p>
-                            <span class="icon">
-                              <i class="fas fa-angle-down" aria-hidden="true"></i>
-                            </span>
-                          </a>
-                        </header>
-                        <div class="card-content">
-                          <div class="content">
+        </div>
+       <!-- </div> -->
+       <div class="field has-addons"> 
+        <div class="columns">
+            <div class="column is-mobile is-one-third">
+            <div class="card">
+                <header class="card-header">
+                <p class="card-header-title day3"></p>
+                    <span class="icon">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                </header>
+                <div class="card-content">
+                <div class="content">
+                 Activities 
+                <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
+                </div>
+                </div>
+                <footer class="card-footer">
+                <a href="#" class="card-footer-item">Completed</a>
+            <!-- <a href="#" class="card-footer-item">Save</a> -->
+                <a href="#" class="card-footer-item">Delete</a>
+                </footer>
+            </div>
+            </div>
+            <div class="column is-mobile is-one-third">
+                <div class="card">
+                    <header class="card-header">
+                        <p class="card-header-title day4"></p>
+                        <span class="icon">
+                            <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                    </header>
+                    <div class="card-content">
+                        <div class="content">
                             Activities 
                             <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
-                          </div>
                         </div>
-                        <footer class="card-footer">
-                          <a href="#" class="card-footer-item">Completed</a>
-                          <!-- <a href="#" class="card-footer-item">Save</a> -->
-                          <a href="#" class="card-footer-item">Delete</a>
-                        </footer>
-                      </div>
-        </div>
                     </div>
-        </article>    
-        </div>
-    </section>
+                    <footer class="card-footer">
+                        <a href="#" class="card-footer-item">Completed</a>
+                        <!-- <a href="#" class="card-footer-item">Save</a> -->
+                        <a href="#" class="card-footer-item">Delete</a>
+                    </footer>
+                </div>
+            </div>
+            </div>
+        </div>   
+    </div>                     
+</section>
 <!-- JavaScript -->
-
 <script src="./js/script.js"></script>
 </body>
-
 </html>
