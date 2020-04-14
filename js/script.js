@@ -89,15 +89,16 @@ for( let i = 0; i < 5; i++ ) {
 
           
         
+          
           console.log(task, chooseWeather,taskDate)
         });
         //function append row based on what city was searched by user
-        $("#submit").on("click", function () {
+        $("#subTask").on("click", function () {
           var listedCity = $('<li>').text('<button>' + city + ' <button>');
           $('.task').append(listedCity)
         }
         )
       
-      });
+      }); 
 
       //Create Function to appened task
