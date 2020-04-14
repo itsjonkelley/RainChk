@@ -124,15 +124,15 @@ function forecastAPI(){
                 for(var i = 0; i < 5; i++) {
                     let myDay = moment().add((1 + i),'day').format('l');
                     let nextDay = "#day" + (i + 1);
-                    console.log("line 144 In for loop :", nextDay, i);
+                    console.log("line 127 In for loop :", nextDay, i);
                     $(nextDay).html(myDay);
                     let myIconCode = response.list[i].weather[0].icon;
                     myIconUrl = "https://openweathermap.org/img/w/" + myIconCode + ".png";
-                    $(".forcastIcon").html("<img src=" + myIconUrl  + ">");
+                    $(".forcastIcon").html("<img src=" + myIconUrl  + ">"); //need to match names up to Maria's cards
                     let myTemp = response.list[i].main.temp_max;
-                    $(nextDay + "-temp").text("Temp: " + myTemp + "°F");
+                    $(nextDay + "-temp").text("Temp: " + myTemp + "°F");//need to match names up to Maria's cards
                     let myHumidity = response.list[i].main.humidity;
-                    $(nextDay + "-humd").text("Humidity: " + myHumidity + "%");
+                    $(nextDay + "-humd").text("Humidity: " + myHumidity + "%");//need to match names up to Maria's cards
                 }
             })
             .catch(function (error) {
