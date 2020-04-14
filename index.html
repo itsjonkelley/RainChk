@@ -13,7 +13,9 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <!-- link to NOT slim jQuery CDN -->
       <script src="https://code.jquery.com/jquery-3.4.1.min.js"integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
+      <!-- link to local style.css -->
       <link rel="stylesheet" href="style.css">
     
       <title>RainChk</title>
@@ -38,12 +40,26 @@
                         </div>
                         <div class="column">
                             <div class="media-content">
-                                <div class="content">
+                                <div class="content" >
                                     <p>
-                                        <strong>Current Weather is: </strong> <i class="fas fa-sun"></i>
+                                        <strong>City: </strong><span id="searchCity"></span>
+                                    </p>
+                                    <p id="weatherIcon">
+                                        <strong>Current Weather is: </strong>
                                     </p>
                                     <p>
-                                        <strong>Current Temp: </strong><span> </span>
+                                        <strong>Current Temp: </strong><span id="search-city-temp"> </span>
+                                    </p>
+                                    <p>
+                                        <strong>Input Current City:</strong>
+                                        <input class="input is-rounded" id="getCity" type="text" placeholder="Ex: Atlanta">
+                                        <button class="button is-info is-rounded" id="locationInputBtn">Search</button>
+                                        <div class="notification is-warning is-hidden">
+                                           <button class="delete" id="alertClose"></button>
+                                           <strong>Did Not find the City you searched.</strong>
+                                            Try City,St,US for an exact match.
+                                        </div>
+                                    </div>
                                     </p>
                                 </div>
                             </div>
@@ -59,7 +75,7 @@
                         <ul>
                             <!-- only change part above -->
                             <li ><a>ToDos</a></li>
-                            <li><a>Weather</a></li>
+                            <li id="weatherLink"><a>Weather</a></li>
                             <li id="imbored-modal"><a >I'm Bored!</a></li>
                             <div class="modal">
                                 <div class="modal-background"></div>
