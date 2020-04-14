@@ -219,3 +219,29 @@ for( let i = 0; i < 5; i++ ) {
     displayDates(showDate);
     console.log(i);
     };
+
+
+    // Function to add task to input
+
+
+    $(document).ready(function () {
+        $('#subTask').on("click", function () {
+          var task = $('#todoInput').val();
+          var chooseWeather = $('.todoWeather').val();
+          var taskDate= $('.todoDate').val();
+
+          
+        
+          
+          console.log(task, chooseWeather,taskDate)
+        });
+        //function append row based on what city was searched by user
+        $("#subTask").on("click", function () {
+          var listedCity = $('<li>').text('<button>' + city + ' <button>');
+          $('.task').append(listedCity)
+        }
+        )
+      
+      }); 
+
+      //Create Function to appened task
