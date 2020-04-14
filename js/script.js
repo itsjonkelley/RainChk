@@ -82,12 +82,14 @@ for( let i = 0; i < 5; i++ ) {
 
 
     $(document).ready(function () {
-        $('#taskInput').on("click", function () {
-          var city = $('taskInput').val();
+        $('#subTask').on("click", function () {
+          var task = $('#todoInput').val();
+          var chooseWeather = $('.todoWeather').val();
+          var taskDate= $('.todoDate').val();
+
+          
         
-          $('taskInput').val("");
-          cityWeather(city);
-          console.log(cityWeather)
+          console.log(task, chooseWeather,taskDate)
         });
         //function append row based on what city was searched by user
         $("#submit").on("click", function () {
@@ -97,3 +99,5 @@ for( let i = 0; i < 5; i++ ) {
         )
       
       });
+
+      //Create Function to appened task
