@@ -114,11 +114,13 @@
                     <h1 class="title">To Do List</h1>
                     <div class="field has-addons">
                         <p class="control is-expanded ">
+                    
                             <input class="input is-info" id="todoInput" type="text" placeholder="Activity">
+
                         </p>
                         <p class="control">
-                            <p class="select is-info">
-                                <select>
+                            <p class="select is-info ">
+                                <select class="todoWeather">
                                     <option>Weather</option>
                                     <option>Sunny</option>
                                     <option>Raining</option>
@@ -129,7 +131,7 @@
                                 </select>
                             </p>
                             <span class="select is-info">
-                                <select>
+                                <select class="todoDate">
                                     <option>Day</option>
                                     <option>Day1</option>
                                     <option>Day2</option>
@@ -139,9 +141,10 @@
                                 </select>
                             </span>
                         </p>
+                        
                         <p class="control">
-                            <a class="button is-info">
-                                choose
+                            <a class="button is-info" id="subTask">
+                                Set Task
                             </a>
                         </p>
             </div>
