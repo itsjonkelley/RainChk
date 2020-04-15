@@ -48,7 +48,7 @@
                                     <p>
                                         <strong>Current Temp: </strong><span id="search-city-temp"> </span>
                                     </p>
-                                    <p>
+                                    <p><!-- City Search Input -->
                                         <strong>Input Current City:</strong>
                                         <input class="input is-rounded" id="getCity" type="text" placeholder="Ex: Atlanta">
                                         <button class="button is-info is-rounded" id="locationInputBtn">Search</button>
@@ -58,13 +58,6 @@
                                             Try City,St,US for an exact match.
                                         </div>
                                     </div>
-                                    </p>
-                                    <p>
-                                        <strong>Input Current City:</strong>
-                                        <div class="field has-addons">
-                                            <input class="input is-rounded" id="getCity" type="text" placeholder="Ex: Atlanta">
-                                            <button class="button is-info is-rounded" id="locationInputBtn">Search</button>
-                                        </div>
                                     </p>
                                 </div>
                             </div>
@@ -80,7 +73,36 @@
                         <ul>
                             <!-- only change part above -->
                             <li ><a>ToDos</a></li>
+                            <!-- WeatherLink Modal -->
                             <li id="weatherLink"><a>Weather</a></li>
+                            <div class="modal" id="5dayForecast">
+                                <div class="modal-background"></div>
+                                <div class="modal-card">
+                                    <header class="modal-card-head">
+                                        <p class="modal-card-title">5 Day Weather Forecast</p>
+                                        <button class="delete" id="Weather-modal-close" aria-label="close"></button>
+                                    </header>
+                                    <section class="modal-card-body">
+                                        <div class="card" id="weather">
+                                            <header class="card-header day0 modalIcon"><!--want to add icon to each-->
+                                              <p class="card-header-title">
+                                                Component
+                                              </p>
+                                            </header>
+                                            <div class="card-content">
+                                              <div class="content is-size-6" id="day0">                                            
+                                              </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <footer class="modal-card-foot">
+                                        <!-- <button class="button is-success" id="save-imbored">Save changes</button>
+                                        <button class="button is-primary" id="next-imbored">Next</button> -->
+                                        <button class="button" id="Weather-cancel-btn">Cancel</button>
+                                    </footer>
+                                </div>
+                            </div>
+                            <!-- ImBored Modal -->
                             <li id="imbored-modal"><a >I'm Bored!</a></li>
                             <div class="modal">
                                 <div class="modal-background"></div>
