@@ -126,13 +126,13 @@ function forecastAPI(){
                 console.log("forcast: ", response);
                 console.log("line 126 temp5: ", response.list[4].main.temp_max);
                 $("#weather").html("<p class='modal-card-title'>" + response.city.name + "  5 Day Weather Forecast</p>");
-                
+                $(".parentWeather").empty();
                 for(var i = 0; i < 5; i++) {
                     let currentConditions = response.list[i].weather[0].description;
                     currentConditions = currentConditions.toUpperCase();
                     console.log("line 135 CurrentConditions: ", currentConditions);
                     let myDay = moment().add(i,'days').format('dddd, MMMM Do'); 
-                    let nextDay = "#modalDay" + i;
+                    let nextDay = "#day" + i;
                     console.log("line 135 In for loop :", nextDay, i);
                     //$(nextDay).html(myDay);
                     let myIconCode = response.list[i].weather[0].icon;
@@ -147,22 +147,33 @@ function forecastAPI(){
                             'class': 'card-header-title',
                             'id': 'modalDay' + i
                         })
-                        // weatherCardHeader.attr({
-                        //     'class': 'card-header modalIcon',
-                        //     'id': 'modalDay' + i
-                        // });
-                        console.log( "weatherCardHeader: ", weatherCardHeader)
-                        
-                        
-                        //$newWeather.append("<img src=" + myIconUrl  + ">");
-                        $(weatherCardHeader).append("<img src=" + myIconUrl  + ">");
-                        $(nextDay).append("Conditions: " + currentConditions);
-                        $(nextDay).append("<img src=" + myIconUrl  + ">");
-                        $(nextDay).append("<br> Current Temp: " + response.list[i].main.temp + "&deg;F<br>");
-                        $(nextDay).append("Hi Temp: " + response.list[i].main.temp_max + "&deg;F<br>");
-                        $(nextDay).append("Low Temp: " + response.list[i].main.temp_min + "°F<br>");
-                        $(nextDay).append("Wind: " + response.list[i].wind.speed + " MPH<br>");
-                        $(nextDay).append("Humidity: " + response.list[i].main.humidity + "%<br>");
+
+                        var card = `                                       
+                        <div class="card" id="weather">
+                        <header class="card-header modalIcon" id="modalday${i}">
+                          <p class="card-header-title" id="">${myDay}<img src="${myIconUrl}"></p>
+                        </header>
+                        <div class="card-content is-size-6">
+                          Conditions: ${currentConditions}<br>
+                          Current Temp: ${response.list[i].main.temp} &deg;F<br>
+                          Low Temp: ${response.list[i].main.temp_min} &deg;F<br>
+                          Hi Temp: ${response.list[i].main.temp_max} &deg;F<br>
+                          Humidity: ${response.list[i].main.humidity} %<br>
+                          Wind: ${response.list[i].wind.speed} MPH<br>
+                          <div class="content" id="day${i}">                                            
+                          </div>
+                        </div>
+                    </div>`
+
+                        // $(weatherCardHeader).append("<img src=" + myIconUrl  + ">");<img src="${myIconUrl}">
+                        // $(nextDay).append("Conditions: " + currentConditions);
+                        // $(nextDay).append("<img src=" + myIconUrl  + ">");
+                        // $(nextDay).append("<br> Current Temp: " + response.list[i].main.temp + "&deg;F<br>");
+                        // $(nextDay).append("Hi Temp: " + response.list[i].main.temp_max + "&deg;F<br>");
+                        // $(nextDay).append("Low Temp: " + response.list[i].main.temp_min + "°F<br>");
+                        // $(nextDay).append("Wind: " + response.list[i].wind.speed + " MPH<br>");
+                        // $(nextDay).append("Humidity: " + response.list[i].main.humidity + "%<br>");
+                        $(".parentWeather").append(card);
 
 
                         //captures click on "Cancel" button to close modal for "Weather" link
@@ -275,6 +286,7 @@ $(document).on("click", "#weatherLink", function() {
     }
     else {
     console.log("Got Input: ", getCity);
+        
       weatherModal = true;
       $("#5dayForecast").addClass("is-active");
       //$(".city").html("<h1>" + getCity + " (" + currentDate + ") </h1");
