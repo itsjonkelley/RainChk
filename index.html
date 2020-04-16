@@ -48,7 +48,7 @@
                                     <p>
                                         <strong>Current Temp: </strong><span id="search-city-temp"> </span>
                                     </p>
-                                    <p>
+                                    <p><!-- City Search Input -->
                                         <strong>Input Current City:</strong>
                                         <input class="input is-rounded" id="getCity" type="text" placeholder="Ex: Atlanta">
                                         <button class="button is-info is-rounded" id="locationInputBtn">Search</button>
@@ -74,15 +74,83 @@
                         <ul>
                             <!-- remove ToDOs line-->
                             <li id="weatherLink"><a>Weather</a></li>
+                            <div class="modal" id="5dayForecast">
+                                <div class="modal-background"></div>
+                                <div class="modal-card ">
+                                    <header class="modal-card-head">
+                                        <p class="modal-card-title" id="weather">5 Day Weather Forecast</p>
+                                        <button class="delete" id="Weather-modal-close" aria-label="close"></button>
+                                    </header>
+                                    <section class="modal-card-body parentWeather">
+                                        <div class="card" id="weather">
+                                            <header class="card-header modalIcon" id="modalday0"><!--want to add icon to each-->
+                                              <p class="card-header-title" id="">Component</p>
+                                            </header>
+                                            <div class="card-content">
+                                              <div class="content is-size-6" id="day0">                                            
+                                              </div>
+                                            </div>
+                                        </div>
+                                    <!-- </section> -->
+                                    <!-- <section class="modal-card-body"> -->
+                                        <div class="card" id="weather">
+                                            <header class="card-header modalIcon" id="modalday1"><!--want to add icon to each-->
+                                              <p class="card-header-title" id="">Component</p>
+                                            </header>
+                                            <div class="card-content">
+                                              <div class="content is-size-6" id="day1">                                            
+                                              </div>
+                                            </div>
+                                        </div>
+                                    <!-- </section> -->
+                                    <!-- <section class="modal-card-body"> -->
+                                        <div class="card" id="weather">
+                                            <header class="card-header modalIcon" id="modalday2"><!--want to add icon to each-->
+                                              <p class="card-header-title" id="">Component</p>
+                                            </header>
+                                            <div class="card-content">
+                                              <div class="content is-size-6" id="day2">                                            
+                                              </div>
+                                            </div>
+                                        </div>
+                                    <!-- </section>
+                                    <section class="modal-card-body"> -->
+                                        <div class="card" id="weather">
+                                            <header class="card-header modalIcon" id="modalday3"><!--want to add icon to each-->
+                                              <p class="card-header-title" id="">Component</p>
+                                            </header>
+                                            <div class="card-content">
+                                              <div class="content is-size-6" id="day3">                                            
+                                              </div>
+                                            </div>
+                                        </div>
+                                    <!-- </section>
+                                    <section class="modal-card-body"> -->
+                                        <div class="card" id="weather">
+                                            <header class="card-header modalIcon" id="modalday4"><!--want to add icon to each-->
+                                              <p class="card-header-title" id="">Component</p>
+                                            </header>
+                                            <div class="card-content">
+                                              <div class="content is-size-6" id="day4">                                            
+                                              </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <footer class="modal-card-foot">
+                                        <button class="button" id="Weather-cancel-btn">Cancel</button>
+                                    </footer>
+                                </div>
+                            </div>
+                            <!-- ImBored Modal -->
                             <li id="imbored-modal"><a >I'm Bored!</a></li>
-                            <div class="modal">
+                            <div class="modal" id="imBored">
                                 <div class="modal-background"></div>
                                 <div class="modal-card">
                                     <header class="modal-card-head">
-                                        <p class="modal-card-title">I'm Bored! Give me something to do.</p>
+                                        <p class="modal-card-title" id="giveMe">I'm Bored! Give me something to do.</p>
                                         <button class="delete" id="modal-close" aria-label="close"></button>
                                     </header>
-                                    <section class="modal-card-body">
+                                    <section class="modal-card-body" id="imBoredMessage">
                                         <p>""</p>
                                     </section>
                                     <footer class="modal-card-foot">
@@ -147,7 +215,7 @@
             <div class="column is-mobile is-one-third">
             <div class="card">
                 <header class="card-header">
-                <p class="card-header-title day0"></p>
+                <p class="card-header-title day0" id="foreIcon0"></p>
                     <span class="icon has-text-info">
                         <i class="fas fa-check-square"></i>
                     </span>
@@ -168,8 +236,7 @@
             <div class="column is-mobile is-one-third">
             <div class="card">
                 <header class="card-header">
-                <p class="card-header-title day1"></p>
-                    <p class="card-header-title day1"></p>
+                <p class="card-header-title day1" id="foreIcon1"></p>
                     <span class="icon has-text-info">
                         <i class="fas fa-check-square"></i>
                     </span>
@@ -190,7 +257,7 @@
             <div class="column is-mobile is-one-third">
             <div class="card">
                 <header class="card-header">
-                <p class="card-header-title day2"></p>
+                <p class="card-header-title day2"  id="foreIcon2"></p>
                     <span class="icon has-text-info">
                         <i class="fas fa-check-square"></i>
                     </span>
@@ -215,7 +282,7 @@
             <div class="column is-mobile is-half">
             <div class="card">
                 <header class="card-header">
-                <p class="card-header-title day3"></p>
+                <p class="card-header-title day3" id="foreIcon3"></p>
                     <span class="icon has-text-info">
                         <i class="fas fa-check-square"></i>
                     </span>
@@ -235,7 +302,7 @@
             <div class="column is-mobile is-half">
                 <div class="card">
                     <header class="card-header">
-                        <p class="card-header-title day4"></p>
+                        <p class="card-header-title day4" id="foreIcon4"></p>
                         <span class="icon has-text-info">
                             <i class="fas fa-check-square"></i>
                         </span>
