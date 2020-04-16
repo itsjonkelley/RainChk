@@ -299,3 +299,26 @@ for( let i = 0; i < 5; i++ ) {
     displayDates(showDate);
     console.log(i);
     };
+
+
+    // Function to add task to input
+   // Function to add task to input
+
+
+   $(document).ready(function () {
+    $('#subTask').on("click", function () {
+        var date = $(".taskDate").val();
+        $(`#${date.toLowerCase()}-list`).append(`<li>${$('#todoInput').val()}<span>
+        <button class="clearTask"> Clear</button> </span> </li>`) 
+       // <button class="delete" id="modal-close" aria-label="close"></button>
+       console.log(date);
+  
+    })
+   })
+
+
+$(document).on("click", ".clearTask",  function() {
+
+   $(this).parents('li').remove();
+
+})

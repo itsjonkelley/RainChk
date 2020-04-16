@@ -132,11 +132,13 @@
                     <h1 class="title">To Do List</h1>
                     <div class="field has-addons">
                         <p class="control is-expanded ">
+                    
                             <input class="input is-info" id="todoInput" type="text" placeholder="Activity">
+
                         </p>
                         <p class="control">
-                            <p class="select is-info">
-                                <select>
+                            <p class="select is-info ">
+                                <select class="todoWeather">
                                     <option>Weather</option>
                                     <option>Sunny</option>
                                     <option>Raining</option>
@@ -147,19 +149,19 @@
                                 </select>
                             </p>
                             <span class="select is-info">
-                                <select>
-                                    <option>Day</option>
+                                <select class="taskDate">
+                                    <option>Day0</option>
                                     <option>Day1</option>
                                     <option>Day2</option>
                                     <option>Day3</option>
                                     <option>Day4</option>
-                                    <option>Day5</option>
                                 </select>
                             </span>
                         </p>
+                        
                         <p class="control">
-                            <a class="button is-info">
-                                choose
+                            <a class="button is-info" id="subTask">
+                                Set Task
                             </a>
                         </p>
             </div>
@@ -178,9 +180,9 @@
                     </span>
                 </header>
                 <div class="card-content">
-                <div class="content is-medium">
+                <div class="content is-medium" id="day0-list">
                  Activities 
-                    <li>Yoga</li>
+                    <li >test 2 </li>
                     <li>Change lightbulbs </li> 
                 </div>
                 </div>
@@ -193,14 +195,13 @@
             <div class="column is-mobile is-one-third">
             <div class="card">
                 <header class="card-header">
-                
-                    <p class="card-header-title day1" id="foreIcon1"></p>
+                <p class="card-header-title day1" id="foreIcon1"></p>
                     <span class="icon has-text-info">
                         <i class="fas fa-check-square"></i>
                     </span>
                 </header>
                 <div class="card-content">
-                <div class="content is-medium">
+                <div class="content is-medium" id="day1-list">
                     Activities 
                         <li>Yoga</li>
                         <li>Change lightbulbs </li> 
@@ -221,7 +222,7 @@
                     </span>
                 </header>
                 <div class="card-content">
-                <div class="content is-medium">
+                <div class="content is-medium" id="day2-list"> 
                     Activities 
                         <li>Yoga</li>
                         <li>Change lightbulbs </li> 
@@ -247,7 +248,7 @@
                     </span>
                 </header>
                 <div class="card-content">
-                <div class="content is-medium">
+                <div class="content is-medium" id="day3-list">
                     Activities 
                         <li>Yoga</li>
                         <li>Change lightbulbs </li> 
@@ -268,7 +269,7 @@
                         </span>
                     </header>
                     <div class="card-content">
-                    <div class="content is-medium">
+                    <div class="content is-medium" id="day4-list">
                         Activities 
                             <li>Yoga</li>
                             <li>Change lightbulbs </li> 
