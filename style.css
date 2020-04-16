@@ -21,3 +21,17 @@
     font: bolder;
     color: rgb(236, 19, 92);
 }
+/* added css */
+#weatherIcon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    vertical-align: top;
+}
+#weatherLink, #imbored-modal {
+    font-weight: bolder;
+}
+#searchCity {
+    font: blue;
+}
+
