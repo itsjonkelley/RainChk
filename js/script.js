@@ -222,26 +222,23 @@ for( let i = 0; i < 5; i++ ) {
 
 
     // Function to add task to input
+   // Function to add task to input
 
 
-    $(document).ready(function () {
-        $('#subTask').on("click", function () {
-          var task = $('#todoInput').val();
-          var chooseWeather = $('.todoWeather').val();
-          var taskDate= $('.todoDate').val();
+   $(document).ready(function () {
+    $('#subTask').on("click", function () {
+        var date = $(".taskDate").val();
+        $(`#${date.toLowerCase()}-list`).append(`<li>${$('#todoInput').val()}<span>
+        <button class="clearTask"> Clear</button> </span> </li>`) 
+       // <button class="delete" id="modal-close" aria-label="close"></button>
+       console.log(date);
+  
+    })
+   })
 
-          
-        
-          
-          console.log(task, chooseWeather,taskDate)
-        });
-        //function append row based on what city was searched by user
-        $("#subTask").on("click", function () {
-          var listedCity = $('<li>').text('<button>' + city + ' <button>');
-          $('.task').append(listedCity)
-        }
-        )
-      
-      }); 
 
-      //Create Function to appened task
+$(document).on("click", ".clearTask",  function() {
+
+   $(this).parents('li').remove();
+
+})
