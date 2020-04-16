@@ -317,8 +317,10 @@ for( let i = 0; i < 5; i++ ) {
    })
 
 
+
 $(document).on("click", ".clearTask",  function() {
 
    $(this).parents('li').remove();
 
 })
+

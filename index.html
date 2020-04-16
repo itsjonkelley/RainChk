@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <link rel="shortcut icon" type="image/png" href="./assets/favicon.ico"/>  
+      <link rel="shortcut icon" type="image/png" href="./assets/RainChkb1.png"/>  
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import bulma.css-->
@@ -32,7 +32,7 @@
                             <br>
                             <h1 class="title">RainChk</h1>
                             <h2 class="subtitle">
-                                Welcome to your <strong>FreeTime Maker!</strong>
+                                <strong>Welcome to your FreeTime Maker!</strong>
                             </h2>
                         </div>
                         <div class="column">
@@ -59,6 +59,7 @@
                                         </div>
                                     </div>
                                     </p>
+                                  
                                 </div>
                             </div>
                         </div>
@@ -67,13 +68,11 @@
         </section>
         <!-- remove background to show white -->
         <div class="container">
-            <div class="columns is-mobile">
-                <div class="column is-mobile">
+            <div class="columns is-half">
+                <div class= "column">
                     <div class="tabs">
                         <ul>
-                            <!-- only change part above -->
-                            <li ><a>ToDos</a></li>
-                            <!-- WeatherLink Modal -->
+                            <!-- remove ToDOs line-->
                             <li id="weatherLink"><a>Weather</a></li>
                             <div class="modal" id="5dayForecast">
                                 <div class="modal-background"></div>
@@ -117,21 +116,19 @@
                                     </footer>
                                 </div>
                             </div>
-                            <!-- <li><a>Catagories</a></li> -->
                         </ul>
                     </div>
                 </div>
-            </div>
-                </article>       
+            </div>       
             </div>
     </section>    
     <!-- added TDL to and dropdown boxes  -->
         <div class="container">
-            <div class="columns">
-                <div class="column is-two-thirds">
+            <div class="columns is-two-thirds">
+                <div class="column">
                     <h1 class="title">To Do List</h1>
                     <div class="field has-addons">
-                        <p class="control is-expanded ">
+                        <p class="control is-expanded">
                     
                             <input class="input is-info" id="todoInput" type="text" placeholder="Activity">
 
@@ -187,8 +184,8 @@
                 </div>
                 </div>
                 <footer class="card-footer">
-                <a href="#" class="card-footer-item">Completed</a>
-                <a href="#" class="card-footer-item">Delete</a>
+                    <a href="#" class="card-footer-item">Completed</a>
+                    <!-- completed is not working yet -->
                 </footer>
             </div>
             </div>
@@ -209,7 +206,7 @@
                 </div>
                 <footer class="card-footer">
                 <a href="#" class="card-footer-item">Completed</a>
-                <a href="#" class="card-footer-item">Delete</a>
+                
                 </footer>
             </div>
             </div>
@@ -229,17 +226,16 @@
                 </div>
                 </div>
                 <footer class="card-footer">
-                <a href="#" class="card-footer-item">Completed</a>
-        
-                <a href="#" class="card-footer-item">Delete</a>
+                    <a href="#" class="card-footer-item">Completed</a>
+                    
                 </footer>
             </div>
             </div>
         </div>
 
        <div class="field has-addons"> 
-        <div class="columns">
-            <div class="column is-mobile is-6">
+        
+            <div class="column is-mobile is-half">
             <div class="card">
                 <header class="card-header">
                 <p class="card-header-title day3" id="foreIcon3"></p>
@@ -248,19 +244,18 @@
                     </span>
                 </header>
                 <div class="card-content">
+
                 <div class="content is-medium" id="day3-list">
-                    Activities 
-                        <li>Yoga</li>
-                        <li>Change lightbulbs </li> 
+                    
                 </div>
                 </div>
                 <footer class="card-footer">
-                <a href="#" class="card-footer-item">Completed</a>
-                <a href="#" class="card-footer-item">Delete</a>
+                    <a href="#" class="card-footer-item">Completed</a>
+                    
                 </footer>
             </div>
             </div>
-            <div class="column is-mobile is-6">
+            <div class="column is-mobile is-half">
                 <div class="card">
                     <header class="card-header">
                         <p class="card-header-title day4" id="foreIcon4"></p>
@@ -269,19 +264,18 @@
                         </span>
                     </header>
                     <div class="card-content">
+
                     <div class="content is-medium" id="day4-list">
-                        Activities 
-                            <li>Yoga</li>
-                            <li>Change lightbulbs </li> 
+                       
+
                     </div>
                     </div>
                     <footer class="card-footer">
                         <a href="#" class="card-footer-item">Completed</a>
-
-                        <a href="#" class="card-footer-item">Delete</a>
+                        
                     </footer>
                 </div>
-            </div>
+        
             </div>
         </div>   
     </div>                     
@@ -290,3 +284,4 @@
 <script src="./js/script.js"></script>
 </body>
 </html>
+
