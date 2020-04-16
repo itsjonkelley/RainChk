@@ -94,7 +94,7 @@ function buildURL (getCity){ //
                         var iconUrl = "https://openweathermap.org/img/w/" + iconCode + ".png";
                         console.log("line 92 current weatherIconURL: ", iconUrl);
                         $("#weatherIcon").html("<strong>Current Weather is: </strong><img src='" + iconUrl + "'>");
-                        $("#search-city-temp").html("<strong>" + response.main.temp + "°F</strong>");
+                        $("#search-city-temp").html("<strong>" + response.main.temp + "&deg;F</strong>");
                         //add to searched list
                         //var found = searchHistory.find(city => city === getCity)
                         // if(!found){
@@ -125,30 +125,41 @@ function forecastAPI(){
                 console.log("URL Sent: ", queryURLforecast);
                 console.log("forcast: ", response);
                 console.log("line 126 temp5: ", response.list[4].main.temp_max);
-                $(".modal-card-title").html("<p class='modal-card-title'>" + response.city.name + "  5 Day Weather Forecast</p>");
+                $("#weather").html("<p class='modal-card-title'>" + response.city.name + "  5 Day Weather Forecast</p>");
+                
                 for(var i = 0; i < 5; i++) {
                     let currentConditions = response.list[i].weather[0].description;
                     currentConditions = currentConditions.toUpperCase();
                     console.log("line 135 CurrentConditions: ", currentConditions);
                     let myDay = moment().add(i,'days').format('dddd, MMMM Do'); 
-                    let nextDay = "#day" + i;
+                    let nextDay = "#modalDay" + i;
                     console.log("line 135 In for loop :", nextDay, i);
                     //$(nextDay).html(myDay);
                     let myIconCode = response.list[i].weather[0].icon;
                     myIconUrl = "https://openweathermap.org/img/w/" + myIconCode + ".png";
-                    var weatherCardHeader = document.createElement("header");
-                    var weatherCardClass = weatherCardClass.addClass("card-header modalIcon");
-                    var weatherCardClass = weatherCardHeader.attr('id', nextDay);
-                    console.log("dayCardIcon: ",weatherCardClass);
+                    
+                    //console.log("dayCardIcon: ",weatherCardClass);
                     if (weatherModal = true) {
+                        var weatherDiv = $('<div class="card" id="weather">');
+                        var weatherCardHeader =  $('<header>');
+                        var newWeather = $('p');
+                        newWeather.attr({
+                            'class': 'card-header-title',
+                            'id': 'modalDay' + i
+                        })
+                        // weatherCardHeader.attr({
+                        //     'class': 'card-header modalIcon',
+                        //     'id': 'modalDay' + i
+                        // });
+                        console.log( "weatherCardHeader: ", weatherCardHeader)
                         
                         
-                        
-                        $dayCardIcon.append("<img src=" + myIconUrl  + ">");
+                        //$newWeather.append("<img src=" + myIconUrl  + ">");
+                        $(weatherCardHeader).append("<img src=" + myIconUrl  + ">");
                         $(nextDay).append("Conditions: " + currentConditions);
                         $(nextDay).append("<img src=" + myIconUrl  + ">");
-                        $(nextDay).append("<br> Current Temp: " + response.list[i].main.temp + "°F<br>");
-                        $(nextDay).append("Hi Temp: " + response.list[i].main.temp_max + "°F<br>");
+                        $(nextDay).append("<br> Current Temp: " + response.list[i].main.temp + "&deg;F<br>");
+                        $(nextDay).append("Hi Temp: " + response.list[i].main.temp_max + "&deg;F<br>");
                         $(nextDay).append("Low Temp: " + response.list[i].main.temp_min + "°F<br>");
                         $(nextDay).append("Wind: " + response.list[i].wind.speed + " MPH<br>");
                         $(nextDay).append("Humidity: " + response.list[i].main.humidity + "%<br>");
@@ -156,15 +167,22 @@ function forecastAPI(){
 
                         //captures click on "Cancel" button to close modal for "Weather" link
                         $(document).on("click", "#Weather-cancel-btn", function() {
-                            $(".modal").removeClass("is-active");
+                            $("#5dayForecast").removeClass("is-active");
                             weatherModal = false;
                         });
                         //captures click to close modal for "Weather" link
                         $("#Weather-modal-close").click(function() {
-                            $(".modal").removeClass("is-active");
+                            $("#5dayForecast").removeClass("is-active");
                             weatherModal = false;
                         });
                         
+                    }
+                    else{
+                        //let todoDay = ".day"+ i;
+                        let todoDay = document.querySelector(".day"+i);
+                        console.log("Line 170 Todo day list", todoDay);
+                        document.querySelector(".day"+i);
+                        $(todoDay).append("<img src=" + myIconUrl  + ">");
                     }
                     $(".forcastIcon").html("<img src=" + myIconUrl  + ">"); //need to match names up to Maria's cards
                     let myTemp = response.list[i].main.temp_max;
@@ -172,6 +190,22 @@ function forecastAPI(){
                     let myHumidity = response.list[i].main.humidity;
                     $(nextDay + "-humd").text("Humidity: " + myHumidity + "%");//need to match names up to Maria's cards
                 }
+                iconForeCode0 = response.list[0].weather[0].icon;
+                console.log("line 271",iconForeCode0);
+                var iconForePull0 = "http://openweathermap.org/img/w/" + iconForeCode0 + ".png";
+                $("#foreIcon0").append("<img src='" + iconForePull0 + "'>");
+                iconForeCode1 = response.list[1].weather[0].icon;
+                var iconForePull1 = "http://openweathermap.org/img/w/" + iconForeCode1 + ".png";
+                $("#foreIcon1").append("<img src='" + iconForePull1 + "'>");
+                iconForeCode2 = response.list[2].weather[0].icon;
+                var iconForePull2 = "http://openweathermap.org/img/w/" + iconForeCode2 + ".png";
+                $("#foreIcon2").append("<img src='" + iconForePull2 + "'>");
+                iconForeCode3 = response.list[3].weather[0].icon;
+                var iconForePull3 = "http://openweathermap.org/img/w/" + iconForeCode3 + ".png";
+                $("#foreIcon3").append("<img src='" + iconForePull3 + "'>");
+                iconForeCode4 = response.list[4].weather[0].icon;
+                var iconForePull4 = "http://openweathermap.org/img/w/" + iconForeCode4 + ".png";
+                $("#foreIcon4").append("<img src='" + iconForePull4 + "'>");
             })
             .catch(function (error) {
                 console.log("OpenWeatherAPI error:", error);
@@ -194,7 +228,7 @@ function imBored() {
                 console.log("URL Sent: ", queryURL);
                 console.log("response: ", response);
                 let modalMessage = ("Activity Type: " + response.type + "<br>" + "Activity: " + response.activity + "<br>" + "# of Participants: " + response.participants);
-                $(".modal-card-body").html(modalMessage);
+                $("#imBoredMessage").html(modalMessage);
                     
                 //captures click on "Cancel" button to close modal for "I'm Bored!" link
                 $(document).on("click", "#cancel-btn", function() {
@@ -203,6 +237,7 @@ function imBored() {
                 //captures click to close modal for "I'm Bored!" link
                 $("#modal-close").click(function() {
                     $(".modal").removeClass("is-active");
+                    let modalMessage = "";
                 });
                 //captures click to save activity to ToDo list.
                 $(document).on("click", "#save-imbored", function() {
@@ -213,7 +248,8 @@ function imBored() {
                     console.log("New variable todoInput", todoInput);
                     $("#todoInput").val(imBoredObj.activity);
                     console.log("Activity: ", imBoredObj.activity);
-                    $(".modal").removeClass("is-active");
+                    $(".imBored").removeClass("is-active");
+                    
                 });
             });
     }
@@ -225,7 +261,7 @@ $(document).on("click", "#next-imbored", function() {
 });           
 //click funtion to capture click on "I'm Bored!" link             
 $("#imbored-modal").on("click", function() {
-    $(".modal").addClass("is-active");
+    $("#imBored").addClass("is-active");
     imBored(); 
 });
 
@@ -251,15 +287,13 @@ $(document).on("click", "#locationInputBtn", function() {
     getCity = $("#getCity").val();
     checkCity(getCity); //calls checkCity function to check for valid search
 })
-            
-
 
 function displayDates () {
     (showDate.innerHTML=date)
 };
 
 for( let i = 0; i < 5; i++ ) {
-    var date = moment().add(i,'days').format('dddd, MMMM Do'); 
+    var date = moment().add(i,'days').format('ddd, MMMM Do'); 
     var showDate = document.querySelector(".day"+i);
     showDate.innerHTML=date;
     displayDates(showDate);
