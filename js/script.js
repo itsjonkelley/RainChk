@@ -236,28 +236,11 @@ for( let i = 0; i < 5; i++ ) {
     })
    })
 
-<<<<<<< HEAD
-          
-        
-          
-          console.log(task, chooseWeather,taskDate)
-        });
-        //function append row based on what city was searched by user
-        $("#subTask").on("click", function () {
-          var listedCity = $('<li>').text('<button>' + city + ' <button>');
-          $('.task').append(listedCity)
-        }
-        )
-      
-      }); 
 
-     
-      //Create Function to appened task
-=======
 
 $(document).on("click", ".clearTask",  function() {
 
    $(this).parents('li').remove();
 
 })
->>>>>>> 7a972137c76f38bf99365994c1596e29b356da6f
+
