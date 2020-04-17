@@ -195,26 +195,7 @@ function forecastAPI(){
                     $(nextDay + "-humd").text("Humidity: " + myHumidity + "%");
                 }
                 console.log("line 195 weatherModal=", weatherModal);
-                // if(weatherModal === true){
-                //     iconForeCode0 = response.list[0].weather[0].icon;
-                //     console.log("line 202",iconForeCode0);
-                //     var iconForePull0 = "http://openweathermap.org/img/w/" + iconForeCode0 + ".png";
-                //     console.log("Line 204 iconForePull0: ", iconForePull0);
-                //     $("#foreIcon0").append("<img src='" + iconForePull0 + "'>");
-                //     iconForeCode1 = response.list[1].weather[0].icon;
-                //     var iconForePull1 = "http://openweathermap.org/img/w/" + iconForeCode1 + ".png";
-                //     $("#foreIcon1").append("<img src='" + iconForePull1 + "'>");
-                //     iconForeCode2 = response.list[2].weather[0].icon;
-                //     var iconForePull2 = "http://openweathermap.org/img/w/" + iconForeCode2 + ".png";
-                //     $("#foreIcon2").append("<img src='" + iconForePull2 + "'>");
-                //     iconForeCode3 = response.list[3].weather[0].icon;
-                //     var iconForePull3 = "http://openweathermap.org/img/w/" + iconForeCode3 + ".png";
-                //     $("#foreIcon3").append("<img src='" + iconForePull3 + "'>");
-                //     iconForeCode4 = response.list[4].weather[0].icon;
-                //     var iconForePull4 = "http://openweathermap.org/img/w/" + iconForeCode4 + ".png";
-                //     $("#foreIcon4").append("<img src='" + iconForePull4 + "'>");
-                //     weatherModal = false;
-                // }
+
                 
             })
             .catch(function (error) {
