@@ -9,7 +9,7 @@ var queryURLforecast;
 
 //intially set weatherModal to false/if true display 5dayforecast in modal
 var weatherModal = false;
-var $weatherCard = $('div').attr("#weather");
+var rendertodoIcons = false;
 
 //getCity variable for City input on Weather page
 var getCity = "Athens,us";
@@ -30,7 +30,7 @@ const imBoredapi = {
     }
 //check getCity input for empty string
 function checkCity(getCity){
-    console.log("in checkCity: ", getCity);
+    console.log("line 33 in checkCity: ", getCity);
     if (!getCity) {//if emptystring display an alert
         $(".notification").removeClass("is-hidden"); //unhide alert
         $(".notification").text("No City Entered to Search.");
@@ -50,7 +50,7 @@ function checkCity(getCity){
     
 function buildURL (getCity){ //
     if (!getCity){
-        console.log("getCity emptystring", getCity);
+        console.log("line 53 getCity emptystring", getCity);
         //queryURL = getLocation();
         //console.log("going to getLocation");
         // queryURL = getLocation(getCity);
@@ -71,19 +71,16 @@ function buildURL (getCity){ //
                 method: "GET" 
                 })
                     .then(function (response) {
-                        console.log("URL Sent: ", queryURLcurrent);
+                        console.log("line 74 URL Sent: ", queryURLcurrent);
                         console.log("response: ", response);
-                        console.log("Line 73 response.name: ", response.name);
+                        console.log("Line 76 response.name: ", response.name);
                         var currentLat = response.coord.lat;
                         var currentLon = response.coord.lon;
-                        console.log("Line 76 Current Lat & Long: ", response.coord.lat, ",",response.coord.lon);
+                        console.log("Line 79 Current Lat & Long: ", response.coord.lat, ",",response.coord.lon);
                         getCity = response.name;
                         var currentCoord = {"lat" : currentLat, "lon" : currentLon};
                         var currrentIcon = response.weather[0].icon;
-                        $("#searchCity").html("<strong>" + response.name + "</strong>");
-                        //$("#search-city-temp").html("<h4 class='dark-text text-left' id='search-city-temp'>" + "Temprature: " + response.main.temp + "°F</h4>");
-                        //$("#search-city-humidity").html("<h4 class='dark-text text-left' id='search-city-humidity'>Humidity: " + response.main.humidity + "%</h4>");
-                        //$("#search-city-wind").html("<h4 class='dark-text text-left' id='search-city-wind'>" + "Wind Speed: " + response.wind.speed + "MPH</h4>");
+                        $("#searchCity").html("<strong>" +" "+ response.name + "</strong>");
                         console.log("currentLat: ", currentLat, "currentLon: ",currentLon);
                         //uvIndex(currentLat, currentLon);
                         //var cityListGroup = $("<ul class='list-group'>");
@@ -131,48 +128,37 @@ function forecastAPI(){
                     let currentConditions = response.list[i].weather[0].description;
                     currentConditions = currentConditions.toUpperCase();
                     console.log("line 135 CurrentConditions: ", currentConditions);
+                    var todoDate = moment().add(i,'days').format('ddd, MMMM Do'); 
                     let myDay = moment().add(i,'days').format('dddd, MMMM Do'); 
-                    let nextDay = "#day" + i;
+                    let nextDay = "#modalDay" + i;
                     console.log("line 135 In for loop :", nextDay, i);
-                    //$(nextDay).html(myDay);
+                    
                     let myIconCode = response.list[i].weather[0].icon;
                     myIconUrl = "https://openweathermap.org/img/w/" + myIconCode + ".png";
                     
-                    //console.log("dayCardIcon: ",weatherCardClass);
-                    if (weatherModal = true) {
-                        var weatherDiv = $('<div class="card" id="weather">');
-                        var weatherCardHeader =  $('<header>');
-                        var newWeather = $('p');
-                        newWeather.attr({
-                            'class': 'card-header-title',
-                            'id': 'modalDay' + i
-                        })
+                    
+                    console.log("Line 140 weatherModal =",weatherModal);
+                    console.log("Line 141 rendertodoIcons =",rendertodoIcons);
+                    if (weatherModal) {
+                        var weatherDiv = $('<div class="card weather-card" id="weather">');
 
                         var card = `                                       
-                        <div class="card" id="weather">
-                        <header class="card-header modalIcon" id="modalday${i}">
-                          <p class="card-header-title" id="">${myDay}<img src="${myIconUrl}"></p>
-                        </header>
-                        <div class="card-content is-size-6">
-                          Conditions: ${currentConditions}<br>
-                          Current Temp: ${response.list[i].main.temp} &deg;F<br>
-                          Low Temp: ${response.list[i].main.temp_min} &deg;F<br>
-                          Hi Temp: ${response.list[i].main.temp_max} &deg;F<br>
-                          Humidity: ${response.list[i].main.humidity} %<br>
-                          Wind: ${response.list[i].wind.speed} MPH<br>
-                          <div class="content" id="day${i}">                                            
-                          </div>
+                        <div class="card weather-card" id="weather">
+                            <header class="card-header modalIcon" id="modalday${i}">
+                            <p class="card-header-title" id="${'modalDay' + i}">${myDay}<img src="${myIconUrl}"></p>
+                            </header>
+                            <div class="card-content is-size-6">
+                                Conditions: ${currentConditions}<br>
+                                Current Temp: ${response.list[i].main.temp} &deg;F<br>
+                                Low Temp: ${response.list[i].main.temp_min} &deg;F<br>
+                                Hi Temp: ${response.list[i].main.temp_max} &deg;F<br>
+                                Humidity: ${response.list[i].main.humidity} %<br>
+                                Wind: ${response.list[i].wind.speed} MPH<br>
+                            <div class="content" id="day${i}">                                            
+                        </div>
                         </div>
                     </div>`
 
-                        // $(weatherCardHeader).append("<img src=" + myIconUrl  + ">");<img src="${myIconUrl}">
-                        // $(nextDay).append("Conditions: " + currentConditions);
-                        // $(nextDay).append("<img src=" + myIconUrl  + ">");
-                        // $(nextDay).append("<br> Current Temp: " + response.list[i].main.temp + "&deg;F<br>");
-                        // $(nextDay).append("Hi Temp: " + response.list[i].main.temp_max + "&deg;F<br>");
-                        // $(nextDay).append("Low Temp: " + response.list[i].main.temp_min + "°F<br>");
-                        // $(nextDay).append("Wind: " + response.list[i].wind.speed + " MPH<br>");
-                        // $(nextDay).append("Humidity: " + response.list[i].main.humidity + "%<br>");
                         $(".parentWeather").append(card);
 
 
@@ -180,57 +166,70 @@ function forecastAPI(){
                         $(document).on("click", "#Weather-cancel-btn", function() {
                             $("#5dayForecast").removeClass("is-active");
                             weatherModal = false;
+                            rendertodoIcons = false;
                         });
                         //captures click to close modal for "Weather" link
                         $("#Weather-modal-close").click(function() {
                             $("#5dayForecast").removeClass("is-active");
                             weatherModal = false;
+                            rendertodoIcons = false;
                         });
-                        
+                        console.log("line 177 rendertodoIcons=",rendertodoIcons);
+                        if (rendertodoIcons){
+                            displayDates(todoDate, myIconUrl)
+                            rendertodoIcons = false;
+                        }
                     }
                     else{
                         //let todoDay = ".day"+ i;
                         let todoDay = document.querySelector(".day"+i);
-                        console.log("Line 170 Todo day list", todoDay);
+                        console.log("Line 186 Todo day list", todoDay);
                         document.querySelector(".day"+i);
-                        $(todoDay).append("<img src=" + myIconUrl  + ">");
+                        
+                        $(todoDay).html(todoDate + "<img src=" + myIconUrl  + ">");
                     }
-                    $(".forcastIcon").html("<img src=" + myIconUrl  + ">"); //need to match names up to Maria's cards
+                    $(".forcastIcon").append("<img src=" + myIconUrl  + ">"); 
                     let myTemp = response.list[i].main.temp_max;
-                    $(nextDay + "-temp").text("Temp: " + myTemp + "°F");//need to match names up to Maria's cards
+                    $(nextDay + "-temp").text("Temp: " + myTemp + "°F");
                     let myHumidity = response.list[i].main.humidity;
-                    $(nextDay + "-humd").text("Humidity: " + myHumidity + "%");//need to match names up to Maria's cards
+                    $(nextDay + "-humd").text("Humidity: " + myHumidity + "%");
                 }
-                iconForeCode0 = response.list[0].weather[0].icon;
-                console.log("line 271",iconForeCode0);
-                var iconForePull0 = "http://openweathermap.org/img/w/" + iconForeCode0 + ".png";
-                $("#foreIcon0").append("<img src='" + iconForePull0 + "'>");
-                iconForeCode1 = response.list[1].weather[0].icon;
-                var iconForePull1 = "http://openweathermap.org/img/w/" + iconForeCode1 + ".png";
-                $("#foreIcon1").append("<img src='" + iconForePull1 + "'>");
-                iconForeCode2 = response.list[2].weather[0].icon;
-                var iconForePull2 = "http://openweathermap.org/img/w/" + iconForeCode2 + ".png";
-                $("#foreIcon2").append("<img src='" + iconForePull2 + "'>");
-                iconForeCode3 = response.list[3].weather[0].icon;
-                var iconForePull3 = "http://openweathermap.org/img/w/" + iconForeCode3 + ".png";
-                $("#foreIcon3").append("<img src='" + iconForePull3 + "'>");
-                iconForeCode4 = response.list[4].weather[0].icon;
-                var iconForePull4 = "http://openweathermap.org/img/w/" + iconForeCode4 + ".png";
-                $("#foreIcon4").append("<img src='" + iconForePull4 + "'>");
+                console.log("line 195 weatherModal=", weatherModal);
+                // if(weatherModal === true){
+                //     iconForeCode0 = response.list[0].weather[0].icon;
+                //     console.log("line 202",iconForeCode0);
+                //     var iconForePull0 = "http://openweathermap.org/img/w/" + iconForeCode0 + ".png";
+                //     console.log("Line 204 iconForePull0: ", iconForePull0);
+                //     $("#foreIcon0").append("<img src='" + iconForePull0 + "'>");
+                //     iconForeCode1 = response.list[1].weather[0].icon;
+                //     var iconForePull1 = "http://openweathermap.org/img/w/" + iconForeCode1 + ".png";
+                //     $("#foreIcon1").append("<img src='" + iconForePull1 + "'>");
+                //     iconForeCode2 = response.list[2].weather[0].icon;
+                //     var iconForePull2 = "http://openweathermap.org/img/w/" + iconForeCode2 + ".png";
+                //     $("#foreIcon2").append("<img src='" + iconForePull2 + "'>");
+                //     iconForeCode3 = response.list[3].weather[0].icon;
+                //     var iconForePull3 = "http://openweathermap.org/img/w/" + iconForeCode3 + ".png";
+                //     $("#foreIcon3").append("<img src='" + iconForePull3 + "'>");
+                //     iconForeCode4 = response.list[4].weather[0].icon;
+                //     var iconForePull4 = "http://openweathermap.org/img/w/" + iconForeCode4 + ".png";
+                //     $("#foreIcon4").append("<img src='" + iconForePull4 + "'>");
+                //     weatherModal = false;
+                // }
+                
             })
             .catch(function (error) {
                 console.log("OpenWeatherAPI error:", error);
-
+                
             });
-};
-                
-                
-                
-
-
- //API call to BOREDAPI and Modal functionality
-function imBored() {
-    let queryURL = imBoredapi.base;
+        };
+        
+        
+        
+        
+        
+        //API call to BOREDAPI and Modal functionality
+        function imBored() {
+            let queryURL = imBoredapi.base;
     $.ajax({
         url: queryURL,
         method: "GET" 
@@ -264,7 +263,7 @@ function imBored() {
                 });
             });
     }
-//Captures Click to Next button in I'm Bored Modal            
+    //Captures Click to Next button in I'm Bored Modal            
 $(document).on("click", "#next-imbored", function() {
     console.log("next button clicked");
     //Next I'mBored API to be cycled to the next activity
@@ -278,19 +277,21 @@ $("#imbored-modal").on("click", function() {
 
 //Captures click on "Weather" link
 $(document).on("click", "#weatherLink", function() {
-    //$(".container").addClass(".is-hidden");
     getCity = $("#getCity").val();
     console.log("Line 199 Value of getCity: ",getCity)
     if(!getCity) {  //checking to see if anything was entered into search prior to going Modal
+        rendertodoIcons = false;
         checkCity(getCity); 
     }
     else {
     console.log("Got Input: ", getCity);
-        
-      weatherModal = true;
+    weatherModal = true;
+    rendertodoIcons = false;
+    console.log("line 283 weatherModal=",weatherModal);
+    //set to true to render 5 day forecast modal
       $("#5dayForecast").addClass("is-active");
-      //$(".city").html("<h1>" + getCity + " (" + currentDate + ") </h1");
-      checkCity(getCity);
+      
+      checkCity(getCity);//got to check city to verify input
     }
 });
 
@@ -301,38 +302,46 @@ $(document).on("click", "#locationInputBtn", function() {
 })
 
 function displayDates () {
-    (showDate.innerHTML=date)
+    console.log("Line 306 rendertodoIcons is ", rendertodoIcons);
+    if(!rendertodoIcons) {
+        console.log("in if not suppost to render -Line 308 rendertodoIcons is ", rendertodoIcons);
+        }
+        else{
+            (showDate.innerHTML=date)
+            rendertodoIcons=false;
+        }
 };
+
 
 for( let i = 0; i < 5; i++ ) {
     var date = moment().add(i,'days').format('ddd, MMMM Do'); 
     var showDate = document.querySelector(".day"+i);
     showDate.innerHTML=date;
     displayDates(showDate);
-    console.log(i);
+    console.log("Line 320 i:",i);
     };
-
-
+    
+    
     // Function to add task to input
-   // Function to add task to input
+    // Function to add task to input
+    
 
-
-   $(document).ready(function () {
-    $('#subTask').on("click", function () {
+    $(document).ready(function () {
+        $('#subTask').on("click", function () {
         var date = $(".taskDate").val();
         $(`#${date.toLowerCase()}-list`).append(`<li>${$('#todoInput').val()}<span>
         <button class="clearTask"> Clear</button> </span> </li>`) 
-       // <button class="delete" id="modal-close" aria-label="close"></button>
-       console.log(date);
-  
+        // <button class="delete" id="modal-close" aria-label="close"></button>
+        console.log(date);
+       
     })
-   })
+})
 
 
 
 $(document).on("click", ".clearTask",  function() {
 
-   $(this).parents('li').remove();
-
+    $(this).parents('li').remove();
+    
 })
 
