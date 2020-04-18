@@ -34,4 +34,8 @@
 #searchCity {
     font: blue;
 }
+.clearTask {
+   font-weight: bolder;
+   background-color: rgb(116, 164, 204);
+}
 

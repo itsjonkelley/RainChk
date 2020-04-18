@@ -23,7 +23,7 @@ const openWeatherapi = {
 }
 //Example BoredAPI URL: "http://www.boredapi.com/api/activity?minaccessibility=0&maxaccessibility=0.1"
 const imBoredapi = {
-     base: "http://www.boredapi.com/api/activity",
+     base: "https://www.boredapi.com/api/activity",
      participants: "participants=",
      minaccessibility: "minaccessibility=0",
      maxaccessibility: "maxaccessibility=0.1" 
@@ -325,4 +325,6 @@ $(document).on("click", ".clearTask",  function() {
     $(this).parents('li').remove();
     
 })
+
+
 
