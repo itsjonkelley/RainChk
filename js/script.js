@@ -155,16 +155,15 @@ function forecastAPI() {
                     $(".parentWeather").append(card);
 
                     //captures click on "Cancel" button to close modal for "Weather" link
-                    $(document).on("click", "#Weather-cancel-btn", function () {
+                    $(document).on("click", "#Weather-cancel-btn", function() {
                         $("#5dayForecast").removeClass("is-active");
                         weatherModal = false;
                     });
                     //captures click to close modal for "Weather" link
-                    $("#Weather-modal-close").click(function () {
+                    $("#Weather-modal-close").click(function() {
                         $("#5dayForecast").removeClass("is-active");
                         weatherModal = false;
                     });
-                    displayDates(todoDate, myIconUrl)
                 }
                 else {
                     let todoDay = document.querySelector(".day" + i);
