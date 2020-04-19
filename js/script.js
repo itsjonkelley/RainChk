@@ -212,14 +212,14 @@ function imBored() {
             });
             //captures click to save activity to ToDo list.
             $(document).on("click", "#save-imbored", function () {
-                console.log("line 216 Save button clicked", response.type);
+                console.log("line 215 Save button clicked", response.type);
                 //saved I'mBored API response to "imBoredObj" to be passed to ToDo list
                 imBoredObj = response;
                 todoInput = imBoredObj.activity;
                 console.log("New variable todoInput", todoInput);
                 $("#todoInput").val(imBoredObj.activity);
                 console.log("Activity: ", imBoredObj.activity);
-                $(".imBored").removeClass("is-active");
+                $(".modal").removeClass("is-active");
 
             });
         });
