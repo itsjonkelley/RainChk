@@ -1,324 +1,303 @@
-
 <!DOCTYPE html>
 <html>
-    <head>
-      <link rel="shortcut icon" type="image/png" href="./assets/RainChkb1.png"/>  
-      <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import bulma.css-->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-      <!--fontAwesome Link-->
-      <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-      <!-- moment.js linke -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <!-- link to NOT slim jQuery CDN -->
-      <script src="https://code.jquery.com/jquery-3.4.1.min.js"integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
-      <!-- link to local style.css -->
-      <link rel="stylesheet" href="style.css">
-      <title>RainChk</title>
-    </head>
+
+<head>
+    <link rel="shortcut icon" type="image/png" href="./assets/RainChkb1.png" />
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import bulma.css-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <!--fontAwesome Link-->
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <!-- moment.js linke -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- link to NOT slim jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- link to local style.css -->
+    <link rel="stylesheet" href="style.css">
+    <title>RainChk</title>
+</head>
+
 <body>
     <!-- added img to hero and also logo -->
     <section class="hero">
-            <div class="hero-body ">
-                <div class="container">
-                    <div class="columns">
-                        <div class="column">
-                            <figure class="image is-48x48">
-                                <img class="is-squared" src="./assets/RainChkb1.png" alt="" style="height: 60px;">
-                            </figure>
-                            <br>
-                            <h1 class="title">RainChk</h1>
-                            <h2 class="subtitle">
-                                Welcome to your<strong> FreeTime Maker!</strong>
-                            </h2>
-                        </div>
-                        <div class="column is-mobile">
-                            <div class="media-content">
-                                <div class="content topRightGroup">
-                                    <p>
-                                        <strong>City: </strong> <span id="searchCity"></span>
-                                    </p>
-                                    <p id="weatherIcon">
-                                        <strong>Current Weather is: </strong>
-                                    </p>
-                                    <p>
-                                        <strong>Current Temp: </strong><span id="search-city-temp"> </span>
-                                    </p>
-                                    <p><!-- City Search Input -->
-                                        <strong>Input Current City:</strong>
-                                        <input class="input is-rounded" id="getCity" type="text" placeholder="Ex: Atlanta">
-                                        <button class="button is-info is-rounded" id="locationInputBtn">Search</button>
-                                        <div class="notification is-warning is-hidden">
-                                           <button class="delete" id="alertClose"></button>
-                                           <strong>Did Not find the City you searched.</strong>
-                                            Try City,St,US for an exact match.
-                                        </div>
+        <div class="hero-body ">
+            <div class="container">
+                <div class="columns">
+                    <div class="column">
+                        <figure class="image is-48x48">
+                            <img class="is-squared" src="./assets/RainChkb1.png" alt="" style="height: 60px;">
+                        </figure>
+                        <br>
+                        <h1 class="title">RainChk</h1>
+                        <h2 class="subtitle">
+                            Welcome to your<strong> FreeTime Maker!</strong>
+                        </h2>
+                    </div>
+                    <div class="column is-mobile">
+                        <div class="media-content">
+                            <div class="content topRightGroup">
+                                <p>
+                                    <strong>City: </strong> <span id="searchCity"></span>
+                                </p>
+                                <p id="weatherIcon">
+                                    <strong>Current Weather is: </strong>
+                                </p>
+                                <p>
+                                    <strong>Current Temp: </strong><span id="search-city-temp"> </span>
+                                </p>
+                                <p>
+                                    <!-- City Search Input -->
+                                    <strong>Input Current City:</strong>
+                                    <input class="input is-rounded" id="getCity" type="text" placeholder="Ex: Atlanta">
+                                    <button class="button is-info is-rounded" id="locationInputBtn">Search</button>
+                                    <div class="notification is-warning is-hidden">
+                                        <button class="delete" id="alertClose"></button>
+                                        <strong>Did Not find the City you searched.</strong>
+                                        Try City,St,US for an exact match.
                                     </div>
-                                    </p>
-                                  
-                                </div>
                             </div>
+                            </p>
+
                         </div>
                     </div>
                 </div>
-        </section>
-        <!-- remove background to show white -->
-        <div class="container">
-            <div class="columns is-half">
-                <div class= "column">
-                    <div class="tabs">
-                        <ul>
-                            <!-- remove ToDOs line-->
-                            <li id="weatherLink"><a>Weather</a></li>
-                            <div class="modal" id="5dayForecast">
-                                <div class="modal-background"></div>
-                                <div class="modal-card ">
-                                    <header class="modal-card-head">
-                                        <p class="modal-card-title" id="weather">5 Day Weather Forecast</p>
-                                        <button class="delete" id="Weather-modal-close" aria-label="close"></button>
-                                    </header>
-                                    <section class="modal-card-body parentWeather">
-                                        <div class="card weather-card" id="weather">
-                                            <header class="card-header modalIcon" id="modalday0"><!--want to add icon to each-->
-                                              <p class="card-header-title" id="">Component</p>
-                                            </header>
-                                            <div class="card-content">
-                                              <div class="content is-size-6" id="modalDay0">                                            
-                                              </div>
-                                            </div>
-                                        </div>
-                                    <!-- </section> -->
-                                    <!-- <section class="modal-card-body"> -->
-                                        <div class="card" id="weather">
-                                            <header class="card-header modalIcon" id="modalday1"><!--want to add icon to each-->
-                                              <p class="card-header-title" id="">Component</p>
-                                            </header>
-                                            <div class="card-content">
-                                              <div class="content is-size-6" id="modalDay1">                                            
-                                              </div>
-                                            </div>
-                                        </div>
-                                    <!-- </section> -->
-                                    <!-- <section class="modal-card-body"> -->
-                                        <div class="card" id="weather">
-                                            <header class="card-header modalIcon" id="modalday2"><!--want to add icon to each-->
-                                              <p class="card-header-title" id="">Component</p>
-                                            </header>
-                                            <div class="card-content">
-                                              <div class="content is-size-6" id="modalDay2">                                            
-                                              </div>
-                                            </div>
-                                        </div>
-                                    <!-- </section>
-                                    <section class="modal-card-body"> -->
-                                        <div class="card" id="weather">
-                                            <header class="card-header modalIcon" id="modalday3"><!--want to add icon to each-->
-                                              <p class="card-header-title" id="">Component</p>
-                                            </header>
-                                            <div class="card-content">
-                                              <div class="content is-size-6" id="modalDay3">                                            
-                                              </div>
-                                            </div>
-                                        </div>
-                                    <!-- </section>
-                                    <section class="modal-card-body"> -->
-                                        <div class="card" id="weather">
-                                            <header class="card-header modalIcon" id="modalday4"><!--want to add icon to each-->
-                                              <p class="card-header-title" id="">Component</p>
-                                            </header>
-                                            <div class="card-content">
-                                              <div class="content is-size-6" id="modalDay4">                                            
-                                              </div>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <footer class="modal-card-foot">
-                                        <button class="button" id="Weather-cancel-btn">Cancel</button>
-                                    </footer>
-                                </div>
-                            </div>
-                            <!-- ImBored Modal -->
-                            <li id="imbored-modal"><a >I'm Bored!</a></li>
-                            <div class="modal" id="imBored">
-                                <div class="modal-background"></div>
-                                <div class="modal-card">
-                                    <header class="modal-card-head">
-                                        <p class="modal-card-title" id="giveMe">I'm Bored! Give me something to do.</p>
-                                        <button class="delete" id="modal-close" aria-label="close"></button>
-                                    </header>
-                                    <section class="modal-card-body" id="imBoredMessage">
-                                        <p>""</p>
-                                    </section>
-                                    <footer class="modal-card-foot">
-                                        <button class="button is-success" id="save-imbored">Save changes</button>
-                                        <button class="button is-primary" id="next-imbored">Next</button>
-                                        <button class="button" id="cancel-btn">Cancel</button>
-                                    </footer>
-                                </div>
-                            </div>
-                        </ul>
-                    </div>
-                </div>
-            </div>       
-            </div>
-    </section>    
-    <!-- added TDL to and dropdown boxes  -->
-        <div class="container">
-            <div class="columns is-two-thirds">
-                <div class="column">
-                    <h1 class="title">To Do List</h1>
-                    <div class="field has-addons">
-                        <p class="control is-expanded">
-                    
-                            <input class="input is-info" id="todoInput" type="text" placeholder="Activity">
-
-                        </p>
-                        <p class="control">
-                            <p class="select is-info ">
-                                <select class="todoWeather">
-                                    <option>Weather</option>
-                                    <option>Sunny</option>
-                                    <option>Raining</option>
-                                    <option>Outdoor</option>
-                                    <option>Indoor</option>
-                                    <option>Hot</option>
-                                    <option>Cold</option>
-                                </select>
-                            </p>
-                            <span class="select is-info">
-                                <select class="taskDate">
-                                    <option>Day0</option>
-                                    <option>Day1</option>
-                                    <option>Day2</option>
-                                    <option>Day3</option>
-                                    <option>Day4</option>
-                                </select>
-                            </span>
-                        </p>
-                        
-                        <p class="control">
-                            <a class="button is-info" id="subTask">
-                                Set Task
-                            </a>
-                        </p>
-            </div>
-    </section>
-<!-- added section and cards -->
-<section>
-    <!-- <div class="field has-addons" added icons and "activities"> -->
-    <div class="container">
-        <div class="columns">
-            <div class="column is-mobile is-one-third">
-            <div class="card">
-                <header class="card-header">
-                <p class="card-header-title day0" id="foreIcon0"></p>
-                    <span class="icon has-text-info">
-                        <i class="fas fa-check-square"></i>
-                    </span>
-                </header>
-                <div class="card-content">
-                <div class="content is-medium" id="day0-list" >
-                 
-                </div>
-                </div>
-                <footer class="card-footer">
-                    <!-- <a class="card-footer-item">Completed</a> -->
-                    <!-- completed is not working yet -->
-                </footer>
-            </div>
-            </div>
-            <div class="column is-mobile is-one-third">
-            <div class="card">
-                <header class="card-header">
-                <p class="card-header-title day1" id="foreIcon1"></p>
-                    <span class="icon has-text-info">
-                        <i class="fas fa-check-square"></i>
-                    </span>
-                </header>
-                <div class="card-content">
-                <div class="content is-medium" id="day1-list">
-                  
-                </div>
-                </div>
-                <footer class="card-footer">
-                <!-- <a href="#" class="card-footer-item">Completed</a>
-                 -->
-                </footer>
-            </div>
-            </div>
-            <div class="column is-mobile is-one-third">
-            <div class="card">
-                <header class="card-header">
-                <p class="card-header-title day2"  id="foreIcon2"></p>
-                    <span class="icon has-text-info">
-                        <i class="fas fa-check-square"></i>
-                    </span>
-                </header>
-                <div class="card-content">
-                <div class="content is-medium" id="day2-list"> 
-                    
-                </div>
-                </div>
-                <footer class="card-footer">
-                    <!-- <a href="#" class="card-footer-item">Completed</a> -->
-                    
-                </footer>
-            </div>
             </div>
         </div>
-
-       <div class="field has-addons"> 
-        
-            <div class="column is-mobile is-half">
-            <div class="card">
-                <header class="card-header">
-                <p class="card-header-title day3" id="foreIcon3"></p>
-                    <span class="icon has-text-info">
-                        <i class="fas fa-check-square"></i>
-                    </span>
-                </header>
-                <div class="card-content">
-
-                <div class="content is-medium" id="day3-list">
-                    
+    </section>
+    <!-- remove background to show white -->
+    <div class="container">
+        <div class="columns is-half">
+            <div class="column">
+                <div class="tabs">
+                    <ul>
+                        <li id="weatherLink"><a>Weather</a></li>
+                        <div class="modal" id="5dayForecast">
+                            <div class="modal-background"></div>
+                            <div class="modal-card ">
+                                <header class="modal-card-head">
+                                    <p class="modal-card-title" id="weather">5 Day Weather Forecast</p>
+                                    <button class="delete" id="Weather-modal-close" aria-label="close"></button>
+                                </header>
+                                <section class="modal-card-body parentWeather">
+                                    <div class="card weather-card" id="weather">
+                                        <header class="card-header modalIcon" id="modalday0">
+                                            <!-- add icon to each-->
+                                            <p class="card-header-title" id="">Component</p>
+                                        </header>
+                                        <div class="card-content">
+                                            <div class="content is-size-6" id="modalDay0">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- </section>  -->
+                                    <div class="card" id="weather">
+                                        <header class="card-header modalIcon" id="modalday1">
+                                            <!-- add icon to each-->
+                                            <p class="card-header-title" id="">Component</p>
+                                        </header>
+                                        <div class="card-content">
+                                            <div class="content is-size-6" id="modalDay1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- </section>  -->
+                                    <div class="card" id="weather">
+                                        <header class="card-header modalIcon" id="modalday2">
+                                            <!--want to add icon to each-->
+                                            <p class="card-header-title" id="">Component</p>
+                                        </header>
+                                        <div class="card-content">
+                                            <div class="content is-size-6" id="modalDay2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- </section> -->
+                                    <div class="card" id="weather">
+                                        <header class="card-header modalIcon" id="modalday3">
+                                            <!-- add icon to each-->
+                                            <p class="card-header-title" id="">Component</p>
+                                        </header>
+                                        <div class="card-content">
+                                            <div class="content is-size-6" id="modalDay3">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- </section>-->
+                                    <div class="card" id="weather">
+                                        <header class="card-header modalIcon" id="modalday4">
+                                            <!-- add icon to each-->
+                                            <p class="card-header-title" id="">Component</p>
+                                        </header>
+                                        <div class="card-content">
+                                            <div class="content is-size-6" id="modalDay4">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <footer class="modal-card-foot">
+                                    <button class="button" id="Weather-cancel-btn">Cancel</button>
+                                </footer>
+                            </div>
+                        </div>
+                        <!-- ImBored Modal -->
+                        <li id="imbored-modal"><a>I'm Bored!</a></li>
+                        <div class="modal" id="imBored">
+                            <div class="modal-background"></div>
+                            <div class="modal-card">
+                                <header class="modal-card-head">
+                                    <p class="modal-card-title" id="giveMe">I'm Bored! Give me something to do.</p>
+                                    <button class="delete" id="modal-close" aria-label="close"></button>
+                                </header>
+                                <section class="modal-card-body" id="imBoredMessage">
+                                    <p>""</p>
+                                </section>
+                                <footer class="modal-card-foot">
+                                    <button class="button is-success" id="save-imbored">Save changes</button>
+                                    <button class="button is-primary" id="next-imbored">Next</button>
+                                    <button class="button" id="cancel-btn">Cancel</button>
+                                </footer>
+                            </div>
+                        </div>
+                    </ul>
                 </div>
-                </div>
-                <footer class="card-footer">
-                    <!-- <a href="#" class="card-footer-item">Completed</a> -->
-                    
-                </footer>
             </div>
-            </div>
-            <div class="column is-mobile is-half">
-                <div class="card">
-                    <header class="card-header">
-                        <p class="card-header-title day4" id="foreIcon4"></p>
-                        <span class="icon has-text-info">
-                            <i class="fas fa-check-square"></i>
+        </div>
+    </div>
+    </section>
+    <!-- added TDL to and dropdown boxes  -->
+    <div class="container">
+        <div class="columns is-two-thirds">
+            <div class="column">
+                <h1 class="title">To Do List</h1>
+                <div class="field has-addons">
+                    <p class="control is-expanded">
+                        <input class="input is-info" id="todoInput" type="text" placeholder="Activity">
+                    </p>
+                    <p class="control">
+                        <p class="select is-info ">
+                            <select class="todoWeather">
+                                <option>Weather</option>
+                                <option>Sunny</option>
+                                <option>Raining</option>
+                                <option>Outdoor</option>
+                                <option>Indoor</option>
+                                <option>Hot</option>
+                                <option>Cold</option>
+                            </select>
+                        </p>
+                        <span class="select is-info">
+                            <select class="taskDate">
+                                <option id="dropday0">Day0</option>
+                                <option id="dropday1">Day1</option>
+                                <option id="dropday2">Day2</option>
+                                <option id="dropday3">Day3</option>
+                                <option id="dropday4">Day4</option>
+                            </select>
                         </span>
-                    </header>
-                    <div class="card-content">
-
-                    <div class="content is-medium" id="day4-list">
-                       
-
-                    </div>
-                    </div>
-                    <footer class="card-footer">
-                        <!-- <a href="#" class="card-footer-item">Completed</a> -->
-                        
-                    </footer>
+                    </p>
+                    <p class="control">
+                        <a class="button is-info" id="subTask">
+                            Set Task
+                        </a>
+                    </p>
                 </div>
-        
-            </div>
-        </div>   
-    </div>                     
-</section>
-<!-- JavaScript -->
-<script src="./js/script.js"></script>
-</body>
-</html>
+                </section>
+                <!-- added section and cards -->
+                <section>
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column is-mobile is-one-third">
+                                <div class="card">
+                                    <header class="card-header">
+                                        <p class="card-header-title day0" id="foreIcon0"></p>
+                                        <span class="icon has-text-info">
+                                            <i class="fas fa-check-square"></i>
+                                        </span>
+                                    </header>
+                                    <div class="card-content">
+                                        <div class="content is-medium" id="day0-list">
+                                        </div>
+                                    </div>
+                                    <footer class="card-footer">
+                                    </footer>
+                                </div>
+                            </div>
+                            <div class="column is-mobile is-one-third">
+                                <div class="card">
+                                    <header class="card-header">
+                                        <p class="card-header-title day1" id="foreIcon1"></p>
+                                        <span class="icon has-text-info">
+                                            <i class="fas fa-check-square"></i>
+                                        </span>
+                                    </header>
+                                    <div class="card-content">
+                                        <div class="content is-medium" id="day1-list">
+                                        </div>
+                                    </div>
+                                    <footer class="card-footer">
+                                    </footer>
+                                </div>
+                            </div>
+                            <div class="column is-mobile is-one-third">
+                                <div class="card">
+                                    <header class="card-header">
+                                        <p class="card-header-title day2" id="foreIcon2"></p>
+                                        <span class="icon has-text-info">
+                                            <i class="fas fa-check-square"></i>
+                                        </span>
+                                    </header>
+                                    <div class="card-content">
+                                        <div class="content is-medium" id="day2-list">
+                                        </div>
+                                    </div>
+                                    <footer class="card-footer">
+                                    </footer>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div class="field has-addons">
+                            <div class="column is-mobile is-half">
+                                <div class="card">
+                                    <header class="card-header">
+                                        <p class="card-header-title day3" id="foreIcon3"></p>
+                                        <span class="icon has-text-info">
+                                            <i class="fas fa-check-square"></i>
+                                        </span>
+                                    </header>
+                                    <div class="card-content">
+                                        <div class="content is-medium" id="day3-list">
+                                        </div>
+                                    </div>
+                                    <footer class="card-footer">
+                                    </footer>
+                                </div>
+                            </div>
+                            <div class="column is-mobile is-half">
+                                <div class="card">
+                                    <header class="card-header">
+                                        <p class="card-header-title day4" id="foreIcon4"></p>
+                                        <span class="icon has-text-info">
+                                            <i class="fas fa-check-square"></i>
+                                        </span>
+                                    </header>
+                                    <div class="card-content">
+                                        <div class="content is-medium" id="day4-list">
+                                        </div>
+                                    </div>
+                                    <footer class="card-footer">
+                                    </footer>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- JavaScript -->
+                <script src="./js/script.js"></script>
+</body>
+
+</html>
